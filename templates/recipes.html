@@ -1,11 +1,23 @@
 {% extends 'base.html' %}
 {% block content %}     
+    
+    
     {% for recipe in recipes %}
-        {{recipe.recipe_name}}
-        {{recipe.recipe_category}}
-        <img src="{{recipe.image_link}}" alt="">
+<div class="row">
+    <div class="col-12 col-md-4 col-xl-3">
+        <div class="card-deck">
+            <div class="card">
+                <img class="card-img-top card-image-holder" src="{{recipe.image_link}}" alt="Card image cap">
+                <div class="card-body">
+                <h5 class="card-title">{{recipe.recipe_name}}</h5>
+                <p class="card-text">{{recipe.description}}</p>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
     {% endfor%}
 
-
-    
 {% endblock %}
