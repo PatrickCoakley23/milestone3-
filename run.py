@@ -47,6 +47,11 @@ def insert_recipe():
     recipes.insert_one(enter_recipes)
     return redirect(url_for("get_recipes"))
 
+@app.route('/recipe_selected/<recipe_id>')
+def recipe_selected(recipe_id):
+    the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    return render_template('recipe_selected.html', recipe=the_recipe)
+    
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

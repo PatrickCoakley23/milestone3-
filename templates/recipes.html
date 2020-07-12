@@ -13,7 +13,11 @@
                 <div class="card-body">
                 <h5 class="card-title">{{recipe.recipe_name}}</h5>
                 <p class="card-text">{{recipe.description}}</p>
-                
+                </div>
+                <div class="row">
+                    <div class="col">
+                    <a class="btn btn-primary" href="{{url_for('recipe_selected', recipe_id=recipe._id)}}" role="button">Link</a>
+                    </div>
                 </div>
             </div>
         </div>

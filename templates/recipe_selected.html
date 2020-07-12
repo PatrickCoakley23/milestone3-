@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block recipe_selected %}
+
+
+<div class="container">
+    {% for recipe in recipe %}
+    <div class="row">
+        <div class="col-4">
+        
+        </div>
+        <div class="col-8">
+        <h2>{{recipe.recipe_name}}</h2>
+        <p>{{recipe.description}}</p>
+        </div>
+
+    {% endfor %}
+    
+    </div>
+
+
+</div>
+
+
+
+
+{% endblock %}
