@@ -49,8 +49,8 @@ def insert_recipe():
 
 @app.route('/recipe_selected/<recipe_id>')
 def recipe_selected(recipe_id):
-    the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    return render_template('recipe_selected.html', recipe=the_recipe)
+    the_recipe = mongo.db.recipes.find({"_id": ObjectId(recipe_id)})
+    return render_template('recipe_selected.html', recipes=the_recipe,)
     
 
 if __name__ == '__main__':

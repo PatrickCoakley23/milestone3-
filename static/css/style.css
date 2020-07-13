@@ -1,5 +1,6 @@
 header {
     background-color: #272727;
+    margin-bottom: 50px;
 }
 
 /* RECIPES HOME PAGE */
@@ -7,4 +8,10 @@ header {
 .card-image-holder {
     width: 100%;
     height: 20vw;
+}
+
+/* RECIPE SELECTED */ 
+
+.recipe_selected_img {
+    width: 100%;
 }

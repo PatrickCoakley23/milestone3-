@@ -3,21 +3,71 @@
 
 
 <div class="container">
-    {% for recipe in recipe %}
+    {% for recipe in recipes %}
     <div class="row">
         <div class="col-4">
-        
-        </div>
-        <div class="col-8">
-        <h2>{{recipe.recipe_name}}</h2>
-        <p>{{recipe.description}}</p>
+            <img src="{{recipe.image_link}}" alt="image of recipe" class="recipe_selected_img">
         </div>
 
-    {% endfor %}
-    
+        <div class="col-8">
+            <h2>{{recipe.recipe_name}}</h2>
+            <p>{{recipe.description}}</p>
+            <div class="row">
+                <div class="col-4">
+                    <h5>Preparation Time</h5>
+                    <p>{{recipe.prep_time}}</p>
+                </div>
+                <div class="col-4">
+                    <h5>Cooking Time</h5>
+                    <p>{{recipe.cook_time}}</p>
+                </div>
+                <div class="col-4">
+                    <h5>Servings</h5>
+                    <p>{{recipe.servings}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <h5>Calories</h5>
+                    <p>{{recipe.calories}}</p>
+                </div>
+                    <div class="col-3">
+                    <h5>Protein</h5>
+                    <p>{{recipe.protein}}</p>
+                </div>
+                    <div class="col-3">
+                    <h5>Carbs</h5>
+                    <p>{{recipe.carbs}}</p>
+                </div>
+                    <div class="col-3">
+                    <h5>Fat</h5>
+                    <p>{{recipe.fat}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h5>Ingredients</h5>
+            <ul>
+               {% for ingredient in recipe.ingredients.split(",") %}
+                    <li>{{ingredient}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+     <div class="row">
+        <div class="col">
+            <h5>Method</h5>
+            <ol>
+               {% for method in recipe.method.split(".") %}
+                    <li>{{method}}</li>
+                {% endfor %}
+            </ol>
+        </div>
     </div>
 
-
+ {% endfor %}
 </div>
 
 
