@@ -50,7 +50,7 @@
         <div class="col">
             <h5>Ingredients</h5>
             <ul>
-               {% for ingredient in recipe.ingredients.split(",") %}
+               {% for ingredient in recipe.ingredients.splitlines() %}
                     <li>{{ingredient}}</li>
                 {% endfor %}
             </ul>
@@ -60,7 +60,7 @@
         <div class="col">
             <h5>Method</h5>
             <ol>
-               {% for method in recipe.method.split(".") %}
+               {% for method in recipe.method.splitlines() %}
                     <li>{{method}}</li>
                 {% endfor %}
             </ol>

@@ -21,15 +21,16 @@ def get_recipes():
 @app.route('/add_recipe')
 def add_recipe():
     return render_template('add_recipes.html',
-    meal_type = mongo.db.recipe_categories.find())
+    recipe_categories = mongo.db.recipe_categories.find())
+
 
 @app.route('/insert_recipe', methods=["POST"])
 def insert_recipe():
     recipes = mongo.db.recipes
-
+    
     enter_recipes = {
         'recipe_name': request.form.get('recipe_name'),
-        'recipe_category': request.form.get('meal_type'),
+        'recipe_category': request.form.get('recipe_category'),
         'prep_time': request.form.get('prep_time'),
         'cook_time': request.form.get('cook_time'),
         'calories': request.form.get('calories'),
@@ -40,6 +41,7 @@ def insert_recipe():
         'ingredients': request.form.get('ingredients'),
         'method': request.form.get('method'),
         'image_link': request.form.get('image_link'),
+        'description': request.form.get('description'),
         'permission_to_delete': True
     }
     
