@@ -1,25 +1,25 @@
-{% extends 'base.html' %} {% block add_recipes %}
+{% extends 'base.html' %} {% block edit_recipes %}
 <div class="container">
-<h2>Add Recipe</h2>
-   <form action="{{ url_for('insert_recipe') }}" method="POST">
+<h2>Edit Recipe</h2>
+   <form action="" method="POST">
       <div class="form-row">
          <div class="form-group col-md-2">
             <label for="prep_time">Preparation Time</label>
-            <input type="text" class="form-control" id="prep_time" name="prep_time"/>
+            <input type="text" class="form-control" id="prep_time" name="prep_time" value="{{recipe.prep_time}}"/>
          </div>
          <div class="form-group col-md-2">
             <label for="cook_time">Cooking Time</label>
-            <input type="text" class="form-control" id="cook_time" name="cook_time"/>
+            <input type="text" class="form-control" id="cook_time" name="cook_time" value="{{recipe.cook_time}}" />
          </div>
          <div class="form-group col-md-6 offset-md-2">
             <label for="recipe_name">Recipe Title</label>
-            <input type="text" class="form-control" id="recipe_name" name="recipe_name"/>
+            <input type="text" class="form-control" id="recipe_name" name="recipe_name" value="{{recipe.recipe_name}}"/>
          </div>
       </div>
       <div class="form-row">
          <div class="form-group col-md-1">
             <label for="calories">Calories</label>
-            <input type="text" class="form-control" id="calories" name="calories" placeholder="eg. 10 kcals"/>
+            <input type="text" class="form-control" id="calories" name="calories" placeholder="eg. 10 kcals" value="{{recipe.calories}}"/>
          </div>
          <div class="form-group col-md-1">
             <label for="protein">Protein</label>
@@ -29,6 +29,7 @@
                id="protein"
                name="protein"
                placeholder="eg. 10g"
+               value="{{recipe.protien}}"
                />
          </div>
          <div class="form-group col-md-1">
@@ -39,6 +40,7 @@
                id="carbs"
                name="carbs"
                placeholder="eg. 10g"
+               value="{{recipe.carbs}}"
                />
          </div>
          <div class="form-group col-md-1">
@@ -49,14 +51,18 @@
                id="fat"
                name="fat"
                placeholder="eg. 10g"
+               value="{{recipe.fat}}"
                />
          </div>
-         <div class="form-group col-md-6 offset-md-2">
+     <div class="form-group col-md-6 offset-md-2">
             <label for="recipe_category">Meal Type</label>
             <select id="recipe_category" class="form-control" name="recipe_category">
-               <option value="" selected>Choose...</option>
-               {% for type in recipe_categories %}
-               <option value="{{type.recipe_category}}">{{type.recipe_category}}</option>
+               <option value="" disabled selected>Choose...</option>
+               {% for type in categories %}
+                    {% if type.recipe_category == recipe.recipe_category %}
+               <option value="{{type.recipe_category}}" selected>{{type.recipe_category}}</option>
+                    {% else %}
+                    {% endif %}
                {% endfor%}
             </select>
          </div>
@@ -64,7 +70,7 @@
       <div class="form-row">
          <div class="form-group col-md-2">
             <label for="servings">Number of Servings</label>
-            <input type="text" class="form-control" id="servings" name="servings" />
+            <input type="text" class="form-control" id="servings" name="servings" value="{{recipe.servings}}""/>
          </div>
          <div class="form-group col-md-6 offset-md-4">
             <label for="description">Description</label>
@@ -73,7 +79,7 @@
                id="description"
                name="description"
                rows="5"
-               ></textarea>
+               >{{recipe.description}}</textarea>
          </div>
       </div>
       <div class="form-row">
@@ -85,7 +91,7 @@
                name="ingredients"
                rows="7"
                placeholder="put each ingredient on its own line"
-               ></textarea>
+               >{{recipe.ingredients}} </textarea>
          </div>
       </div>
       <div class="form-row">
@@ -97,7 +103,7 @@
                name="method"
                rows="7"
                placeholder="put each step on its own line"
-               ></textarea>
+               >{{recipe.method}}</textarea>
          </div>
       </div>
       <div class="form-row">
@@ -107,13 +113,14 @@
                type="text"
                class="form-control"
                id="image_link"
-               name="image_link"
+               name="image_link"               
+               value="{{recipe.image_link}}"
                />
          </div>
       </div>
     <div class="form-row">
         <div class="col-md-6 offset-md-6">
-            <button type="submit" class="btn btn-primary">Submit Recipe</button>
+            <button type="submit" class="btn btn-primary">Edit Recipe</button>
         </div>
     </div>
    </form>

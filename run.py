@@ -10,6 +10,7 @@ app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'milestone3'
 app.config["MONGO_URI"] = os.environ['MONGO_URI']
 
+
 mongo = PyMongo(app)
 
 
@@ -28,6 +29,7 @@ def add_recipe():
 def insert_recipe():
     recipes = mongo.db.recipes
     
+
     enter_recipes = {
         'recipe_name': request.form.get('recipe_name'),
         'recipe_category': request.form.get('recipe_category'),
@@ -44,16 +46,25 @@ def insert_recipe():
         'description': request.form.get('description'),
         'permission_to_delete': True
     }
-    
-    
+       
     recipes.insert_one(enter_recipes)
     return redirect(url_for("get_recipes"))
+
 
 @app.route('/recipe_selected/<recipe_id>')
 def recipe_selected(recipe_id):
     the_recipe = mongo.db.recipes.find({"_id": ObjectId(recipe_id)})
     return render_template('recipe_selected.html', recipes=the_recipe,)
+
+
+@app.route('/edit_recipe/<recipe_id>')
+def edit_recipe(recipe_id):
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    categories = mongo.db.recipe_categories.find()
+    return render_template('edit_recipe.html', recipe=recipe, 
+                            categories=categories)
     
+
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

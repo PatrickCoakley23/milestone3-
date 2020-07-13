@@ -7,20 +7,25 @@
 <div class="row">
  {% for recipe in recipes %}
     <div class="col-12 col-md-4 col-xl-3">
-        <div class="card-deck">
-            <div class="card">
-                <img class="card-img-top card-image-holder" src="{{recipe.image_link}}" alt="Card image cap">
-                <div class="card-body">
-                <h5 class="card-title">{{recipe.recipe_name}}</h5>
-                <p class="card-text">{{recipe.description}}</p>
-                </div>
-                <div class="row">
-                    <div class="col">
-                    <a class="btn btn-primary" href="{{url_for('recipe_selected', recipe_id=recipe._id)}}" role="button">Link</a>
+        <a href="{{url_for('recipe_selected', recipe_id=recipe._id)}}" class="card-deck-anchor">
+            <div class="card-deck">
+                <div class="card">
+                    <img class="card-img-top card-image-holder" src="{{recipe.image_link}}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{recipe.recipe_name}}</h5>
+                        <p class="card-text">{{recipe.description}}</p>
+                        {% if recipe.permission_to_delete %}
+                        <div class="row">
+                        <a class="btn btn-primary" href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" role="button">Edit</a>
+                        </div>
+                        {% else %}
+                        {% endif %}
                     </div>
                 </div>
             </div>
-        </div>
+        </a>    
+        
+
     </div>
         {% endfor%}
 </div>

@@ -10,6 +10,16 @@ header {
     height: 20vw;
 }
 
+.card-deck-anchor {
+    text-decoration: none;
+    color: black;
+}
+
+.card-deck-anchor:hover {
+     text-decoration: none;
+     color: black;
+}
+
 /* RECIPE SELECTED */ 
 
 .recipe_selected_img {
