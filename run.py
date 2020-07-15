@@ -2,6 +2,7 @@ import os
 from flask import Flask, render_template, url_for, request, redirect, flash
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from flask_paginate import Pagination, get_page_parameter
 
 
 app = Flask(__name__)
@@ -16,13 +17,22 @@ mongo = PyMongo(app)
 
 @app.route('/')
 def get_recipes():
-    return render_template("recipes.html", recipes=mongo.db.recipes.find())
+    per_page = 1
+    recipes = mongo.db.recipes.find()
+    page = request.args.get(get_page_parameter(), type=int, default=1)
+    skips = per_page * (page - 1)
+    cursor = recipes.skip(skips).limit(per_page)
+    pagination = Pagination(page=page, total=recipes.count(), record_name='recipes', per_page=per_page, bs_version=4, css_framework='bootstrap')
+    return render_template("recipes.html", recipes=recipes, pagination=pagination)
+
+
 
 
 @app.route('/add_recipe')
 def add_recipe():
     return render_template('add_recipes.html',
     recipe_categories = mongo.db.recipe_categories.find())
+
 
 
 @app.route('/insert_recipe', methods=["POST"])
@@ -96,4 +106,5 @@ def delete_recipe(recipe_id):
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
-            debug=True)
+            debug=True),
+          
