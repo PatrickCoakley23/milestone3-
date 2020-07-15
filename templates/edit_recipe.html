@@ -57,11 +57,11 @@
      <div class="form-group col-md-6 offset-md-2">
             <label for="recipe_category">Meal Type</label>
             <select id="recipe_category" class="form-control" name="recipe_category">
-               <option value="" disabled selected>Choose...</option>
-               {% for type in categories %}
+                {% for type in categories %}
                     {% if type.recipe_category == recipe.recipe_category %}
                <option value="{{type.recipe_category}}" selected>{{type.recipe_category}}</option>
                     {% else %}
+                <option value="{{type.recipe_category}}">{{type.recipe_category}}</option>  
                     {% endif %}
                {% endfor%}
             </select>
@@ -70,7 +70,7 @@
       <div class="form-row">
          <div class="form-group col-md-2">
             <label for="servings">Number of Servings</label>
-            <input type="text" class="form-control" id="servings" name="servings" value="{{recipe.servings}}""/>
+            <input type="text" class="form-control" id="servings" name="servings" value="{{recipe.servings}}"/>
          </div>
          <div class="form-group col-md-6 offset-md-4">
             <label for="description">Description</label>

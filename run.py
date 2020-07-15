@@ -1,11 +1,11 @@
 import os
-from flask import Flask, render_template, url_for, request, redirect
+from flask import Flask, render_template, url_for, request, redirect, flash
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
 
 app = Flask(__name__)
-
+app.config['SECRET_KEY'] = '49f4c05510140416d281bbf3f6526df1'
 
 app.config["MONGO_DBNAME"] = 'milestone3'
 app.config["MONGO_URI"] = os.environ['MONGO_URI']
@@ -81,10 +81,17 @@ def update_recipe(recipe_id):
         'ingredients': request.form.get('ingredients'),
         'method': request.form.get('method'),
         'image_link': request.form.get('image_link'),
-        'description': request.form.get('description')
+        'description': request.form.get('description'),
+        'permission_to_delete': True
     })   
     return redirect(url_for('get_recipes'))
+    
 
+@app.route('/delete_recipe/<recipe_id>')
+def delete_recipe(recipe_id):
+    mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
+    flash('recipe has been deleted')
+    return redirect(url_for('get_recipes'))
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
