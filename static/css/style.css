@@ -16,10 +16,26 @@ header {
 }
 
 .card-deck-anchor:hover {
-     text-decoration: none;
-     color: black;
+    text-decoration: none;
+    color: black;
 }
 
+/*
+.edit-btn {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 25px;
+    left: 30px;
+} 
+
+.delete-btn {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 25px;
+    right: 30px;
+}
+
+*/
 /* RECIPE SELECTED */ 
 
 .recipe_selected_img {
