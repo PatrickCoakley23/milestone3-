@@ -7,6 +7,22 @@ body {
     background: #111111;
 }
 
+h2 {
+    text-align: center;
+    margin: 20px 0;
+    color: #bc9982;
+}
+
+.pagination-page-info {
+    color: #ea3232cf;
+    text-align: center;
+    font-size: x-large;
+    margin: 50px 0;
+}
+
+.pagination-page-info b {
+    color: whitesmoke;
+}
 
 /* RECIPES HOME PAGE */
 
@@ -44,8 +60,36 @@ hr {
     color: #B7B4B2;
     border-color: #bc9982;
 }
+
 /* RECIPE SELECTED */ 
 
 .recipe_selected_img {
     width: 100%;
 }
+
+/* ADD RECIPE PAGE */
+
+.hr-header {
+    border: 0;
+    width: 124px;
+    height: 2px;
+    background-color: #bf5d1d;
+    margin-top: 0;
+}
+
+
+.form-group textarea, select, input, label {
+    color: #B7B4B2;;
+    
+}
+
+.form-control {
+    background-color: black;
+    border-color: #bc9982;
+}
+
+
+
+
+
+

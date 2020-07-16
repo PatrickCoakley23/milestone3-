@@ -1,6 +1,10 @@
 {% extends 'base.html' %} {% block add_recipes %}
 <div class="container">
-<h2>Add Recipe</h2>
+
+ <hr class="hr-header">
+ <h2>Add Recipe</h2>
+<hr class="hr-header">
+
    <form action="{{ url_for('insert_recipe') }}" method="POST">
       <div class="form-row">
          <div class="form-group col-md-2">
