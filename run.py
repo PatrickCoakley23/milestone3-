@@ -17,7 +17,7 @@ mongo = PyMongo(app)
 
 @app.route('/')
 def get_recipes():
-    per_page = 8
+    per_page = 9
     recipes = mongo.db.recipes.find()
     page = request.args.get(get_page_parameter(), type=int, default=1)
     skips = per_page * (page - 1)

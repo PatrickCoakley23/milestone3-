@@ -3,39 +3,47 @@ header {
     margin-bottom: 50px;
 }
 
+body {
+    background: #111111;
+}
+
+
 /* RECIPES HOME PAGE */
 
 .card-image-holder {
-    width: 100%;
+    width: 85%;
     height: 20vw;
+    align-self: center;
+    border: 2px solid #bc9982;
 }
 
-.card-deck-anchor {
-    text-decoration: none;
-    color: black;
+.card-body p , a {
+    color: #B7B4B2;
+    text-align: center;
 }
 
-.card-deck-anchor:hover {
-    text-decoration: none;
-    color: black;
+.card-body h5 {
+    color: #bc9982;
+    text-align: center;
 }
 
-/*
-.edit-btn {
-    position: absolute;
-    bottom: 0;
-    margin-bottom: 25px;
-    left: 30px;
-} 
-
-.delete-btn {
-    position: absolute;
-    bottom: 0;
-    margin-bottom: 25px;
-    right: 30px;
+.card {
+    background-color: #111111;
+    border-color: 
 }
 
-*/
+hr {
+    border: 0;
+    width: 75px;
+    height: 2px;
+    background-color: #bf5d1d;
+    margin-top: 0;
+}
+
+#btn-card {
+    color: #B7B4B2;
+    border-color: #bc9982;
+}
 /* RECIPE SELECTED */ 
 
 .recipe_selected_img {
