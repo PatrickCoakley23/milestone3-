@@ -4,13 +4,14 @@
 
 <div class="container">
     {% for recipe in recipes %}
+    <h2>{{recipe.recipe_name}}</h2>
     <div class="row recipe-selected">
-        <div class="col-4">
+        <div class="col-6 offset-3">
             <img src="{{recipe.image_link}}" alt="image of recipe" class="recipe_selected_img">
         </div>
-
-        <div class="col-8">
-            <h2>{{recipe.recipe_name}}</h2>
+    </div>
+    <div class="row align-row"> 
+        <div class="col-12">
             <p>{{recipe.description}}</p>
             <div class="row">
                 <div class="col-4">

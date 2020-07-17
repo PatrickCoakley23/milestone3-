@@ -99,6 +99,23 @@ hr {
 
 .recipe_selected_img {
     width: 100%;
+    margin-bottom: 20px;
+}
+
+.align-row {
+    text-align: center;
+}
+
+/*
+@media screen and (max-width: 992px) {
+.recipe_selected_img {
+    margin-top: 125px;
+  }
+}
+*/
+
+.recipe-selected {
+    display: flex;
 }
 
 /* ADD RECIPE PAGE */
