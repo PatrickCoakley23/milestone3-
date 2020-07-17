@@ -4,7 +4,7 @@
 
 <div class="container">
     {% for recipe in recipes %}
-    <div class="row">
+    <div class="row recipe-selected">
         <div class="col-4">
             <img src="{{recipe.image_link}}" alt="image of recipe" class="recipe_selected_img">
         </div>
@@ -51,7 +51,7 @@
             <h5>Ingredients</h5>
             <ul>
                {% for ingredient in recipe.ingredients.splitlines() %}
-                    <li>{{ingredient}}</li>
+                    <li class="recipe-list">{{ingredient}}</li>
                 {% endfor %}
             </ul>
         </div>
@@ -59,7 +59,7 @@
      <div class="row">
         <div class="col">
             <h5>Method</h5>
-            <ol>
+            <ol class="recipe-list">
                {% for method in recipe.method.splitlines() %}
                     <li>{{method}}</li>
                 {% endfor %}
