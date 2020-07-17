@@ -1,12 +1,16 @@
 import os
-from flask import Flask, render_template, url_for, request, redirect, flash
+from flask import Flask, render_template, url_for, request, redirect, flash, session
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from flask_paginate import Pagination, get_page_parameter
+from flask_bcrypt import Bcrypt, generate_password_hash
+
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '49f4c05510140416d281bbf3f6526df1'
+bcrypt = Bcrypt(app)
+
+app.config['SECRET_KEY'] = os.environ['secret_key']
 
 app.config["MONGO_DBNAME"] = 'milestone3'
 app.config["MONGO_URI"] = os.environ['MONGO_URI']
@@ -14,8 +18,35 @@ app.config["MONGO_URI"] = os.environ['MONGO_URI']
 
 mongo = PyMongo(app)
 
-
 @app.route('/')
+def index(): 
+    if 'username' in session:
+        return 'You are logged in as ' + session['username']
+    return render_template('index.html')
+
+app.route('/login')
+def login():
+    return ''
+
+@app.route('/register', methods=['POST', 'GET'])
+def register():
+    if request.method == 'POST':
+        users = mongo.db.users
+        existing_user = users.find_one({'name' : request.form['username']})
+
+        if existing_user is None:
+            hashpass = bcrypt.generate_password_hash(request.form["pass"].encode("utf-8"))
+            users.insert({'name' : request.form.get('username'), 'password' : hashpass})
+            session['username'] = request.form['username']
+            return redirect(url_for('index'))
+        
+        return 'That username already exists!'
+
+    return render_template('register.html')
+
+
+
+@app.route('/recipes')
 def get_recipes():
     per_page = 9
     recipes = mongo.db.recipes.find()
