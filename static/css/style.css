@@ -24,6 +24,18 @@ h2 {
     color: whitesmoke;
 }
 
+.page-item.active .page-link {
+    background-color: #ea3232cf;
+    border-color: #dee2e6;
+}
+
+.page-link {
+    color: #ea3232cf;
+    background-color: #fff
+}
+
+
+
 /* RECIPES HOME PAGE */
 
 .card-image-holder {

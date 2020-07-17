@@ -22,7 +22,7 @@ def get_recipes():
     page = request.args.get(get_page_parameter(), type=int, default=1)
     skips = per_page * (page - 1)
     cursor = recipes.skip(skips).limit(per_page)
-    pagination = Pagination(page=page, total=recipes.count(), record_name='recipes', per_page=per_page, bs_version=4, css_framework='bootstrap')
+    pagination = Pagination(page=page, total=recipes.count(), record_name='recipes', per_page=per_page, bs_version=4, css_framework='bootstrap', alignment='center')
     return render_template("recipes.html", recipes=recipes, pagination=pagination)
 
 
