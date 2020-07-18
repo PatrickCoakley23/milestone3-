@@ -4,19 +4,24 @@ from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from flask_paginate import Pagination, get_page_parameter
 from flask_bcrypt import Bcrypt, generate_password_hash
-
-
+from flask_login import LoginManager, UserMixin
 
 
 app = Flask(__name__)
 bcrypt = Bcrypt(app)
-app.config['SECRET_KEY'] = os.environ['secret_key']
+login_manager = LoginManager(app)
 
+app.config['SECRET_KEY'] = os.environ['secret_key']
 app.config["MONGO_DBNAME"] = 'milestone3'
 app.config["MONGO_URI"] = os.environ['MONGO_URI']
 
 
 mongo = PyMongo(app)
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.get(user_id)
+
 
 @app.route('/')
 def index(): 
@@ -136,6 +141,7 @@ def update_recipe(recipe_id):
         'description': request.form.get('description'),
         'permission_to_delete': True
     })   
+    flash('recipe has been edited')
     return redirect(url_for('get_recipes'))
     
 
