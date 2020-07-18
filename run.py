@@ -7,9 +7,9 @@ from flask_bcrypt import Bcrypt, generate_password_hash
 
 
 
+
 app = Flask(__name__)
 bcrypt = Bcrypt(app)
-
 app.config['SECRET_KEY'] = os.environ['secret_key']
 
 app.config["MONGO_DBNAME"] = 'milestone3'
@@ -24,20 +24,31 @@ def index():
         return 'You are logged in as ' + session['username']
     return render_template('index.html')
 
-app.route('/login')
+
+@app.route('/login', methods=['POST', 'GET'])
 def login():
-    return ''
+    users = mongo.db.users
+    login_user = users.find_one({'name' : request.form['username']})
+
+    if login_user:
+        if bcrypt.check_password_hash(login_user['password'], request.form.get('pass')):
+            session['username'] = request.form['username']
+            return redirect(url_for('index'))
+
+    return 'Invalid username/password combination'
+
 
 @app.route('/register', methods=['POST', 'GET'])
 def register():
     if request.method == 'POST':
         users = mongo.db.users
-        existing_user = users.find_one({'name' : request.form['username']})
+        existing_user = users.find_one({'name' : request.form.get('username')})
 
         if existing_user is None:
-            hashpass = bcrypt.generate_password_hash(request.form["pass"].encode("utf-8"))
+            password = request.form.get("pass")
+            hashpass = bcrypt.generate_password_hash(password).decode('utf-8')
             users.insert({'name' : request.form.get('username'), 'password' : hashpass})
-            session['username'] = request.form['username']
+            session['username'] = request.form.get('username')
             return redirect(url_for('index'))
         
         return 'That username already exists!'
