@@ -38,7 +38,7 @@ def login():
     if login_user:
         if bcrypt.check_password_hash(login_user['password'], request.form.get('pass')):
             session['username'] = request.form['username']
-            return redirect(url_for('index'))
+            return redirect(url_for('get_recipes'))
 
     return 'Invalid username/password combination'
 
@@ -54,7 +54,7 @@ def register():
             hashpass = bcrypt.generate_password_hash(password).decode('utf-8')
             users.insert({'name' : request.form.get('username'), 'password' : hashpass})
             session['username'] = request.form.get('username')
-            return redirect(url_for('index'))
+            return redirect(url_for('get_recipes'))
         
         return 'That username already exists!'
 
@@ -101,7 +101,8 @@ def insert_recipe():
         'method': request.form.get('method'),
         'image_link': request.form.get('image_link'),
         'description': request.form.get('description'),
-        'permission_to_delete': True
+        'permission_to_delete': True,
+        'username': session['username']
     }
        
     recipes.insert_one(enter_recipes)
@@ -151,8 +152,75 @@ def delete_recipe(recipe_id):
     flash('recipe has been deleted')
     return redirect(url_for('get_recipes'))
 
+@app.route('/breakfast')
+def breakfast_recipes():
+    per_page = 9
+    recipes = recipes=mongo.db.recipes.find({'recipe_category': 'Breakfast'})
+    page = request.args.get(get_page_parameter(), type=int, default=1)
+    skips = per_page * (page - 1)
+    cursor = recipes.skip(skips).limit(per_page)
+    pagination = Pagination(page=page, total=recipes.count(), record_name='recipes', per_page=per_page, bs_version=4, css_framework='bootstrap', alignment='center')
+    return render_template('recipes.html', recipes=recipes, pagination=pagination)
+
+@app.route('/lunch')
+def lunch_recipes():
+    per_page = 9
+    recipes = recipes=mongo.db.recipes.find({'recipe_category': 'Lunch'})
+    page = request.args.get(get_page_parameter(), type=int, default=1)
+    skips = per_page * (page - 1)
+    cursor = recipes.skip(skips).limit(per_page)
+    pagination = Pagination(page=page, total=recipes.count(), record_name='recipes', per_page=per_page, bs_version=4, css_framework='bootstrap', alignment='center')
+    return render_template('recipes.html', recipes=recipes, pagination=pagination)
+
+@app.route('/Dinner')
+def dinner_recipes():
+    per_page = 9
+    recipes = recipes=mongo.db.recipes.find({'recipe_category': 'Dinner'})
+    page = request.args.get(get_page_parameter(), type=int, default=1)
+    skips = per_page * (page - 1)
+    cursor = recipes.skip(skips).limit(per_page)
+    pagination = Pagination(page=page, total=recipes.count(), record_name='recipes', per_page=per_page, bs_version=4, css_framework='bootstrap', alignment='center')
+    return render_template('recipes.html', recipes=recipes, pagination=pagination)
+
+
+@app.route('/Dessert')
+def dessert_recipes():
+    per_page = 9
+    recipes = recipes=mongo.db.recipes.find({'recipe_category': 'Dessert'})
+    page = request.args.get(get_page_parameter(), type=int, default=1)
+    skips = per_page * (page - 1)
+    cursor = recipes.skip(skips).limit(per_page)
+    pagination = Pagination(page=page, total=recipes.count(), record_name='recipes', per_page=per_page, bs_version=4, css_framework='bootstrap', alignment='center')
+    return render_template('recipes.html', recipes=recipes, pagination=pagination)
+
+
+@app.route('/Vegetarian')
+def vegetarian_recipes():
+    per_page = 9
+    recipes = recipes=mongo.db.recipes.find({'recipe_category': 'Vegetarian'})
+    page = request.args.get(get_page_parameter(), type=int, default=1)
+    skips = per_page * (page - 1)
+    cursor = recipes.skip(skips).limit(per_page)
+    pagination = Pagination(page=page, total=recipes.count(), record_name='recipes', per_page=per_page, bs_version=4, css_framework='bootstrap', alignment='center')
+    return render_template('recipes.html', recipes=recipes, pagination=pagination)
+
+
+@app.route('/Gluten_Free')
+def gluten_free_recipes():
+    per_page = 9
+    recipes = recipes=mongo.db.recipes.find({'recipe_category': 'Gluten Free'})
+    page = request.args.get(get_page_parameter(), type=int, default=1)
+    skips = per_page * (page - 1)
+    cursor = recipes.skip(skips).limit(per_page)
+    pagination = Pagination(page=page, total=recipes.count(), record_name='recipes', per_page=per_page, bs_version=4, css_framework='bootstrap', alignment='center')
+    return render_template('recipes.html', recipes=recipes, pagination=pagination)
+
+
+
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
             debug=True),
-          
+        

@@ -19,7 +19,7 @@ h2 {
 }
 
 .pagination-page-info {
-    color: #ea3232cf;
+    color: #bf5d1d;
     text-align: center;
     font-size: x-large;
     margin: 50px 0;
@@ -30,12 +30,12 @@ h2 {
 }
 
 .page-item.active .page-link {
-    background-color: #ea3232cf;
+    background-color: #bf5d1d;
     border-color: #dee2e6;
 }
 
 .page-link {
-    color: #ea3232cf;
+    color: #bf5d1d;
     background-color: #fff
 }
 
@@ -95,6 +95,25 @@ hr {
     margin: 20px 0;
 }
 
+.btn-dropdown {
+    color: #B7B4B2;
+    border-color: #bc9982;
+    background-color: black;
+}
+
+
+.btn-secondary:not(:disabled):not(.disabled).active, 
+.btn-secondary:not(:disabled):not(.disabled):active, 
+.show>.btn-secondary.dropdown-toggle, .btn-dropdown:hover {
+    color: white;
+    background: #bf5d1d;
+    border-color: #272727;
+}
+
+.dropdown-item {
+    color: #bf5d1d;
+}
+ 
 /* RECIPE SELECTED */ 
 
 .recipe_selected_img {

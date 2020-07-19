@@ -67,7 +67,7 @@
             </ol>
         </div>
     </div>
-        {% if recipe.permission_to_delete %}
+        {% if recipe.username == session['username'] %}
     <div class="row">
         <div class="col-3">
             <a class="btn btn-primary" href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" role="button">Edit</a>
