@@ -11,7 +11,7 @@ app = Flask(__name__)
 bcrypt = Bcrypt(app)
 login_manager = LoginManager(app)
 
-app.config['SECRET_KEY'] = os.environ['secret_key']
+app.config['SECRET_KEY'] = os.environ['SECRET_KEY']
 app.config["MONGO_DBNAME"] = 'milestone3'
 app.config["MONGO_URI"] = os.environ['MONGO_URI']
 
