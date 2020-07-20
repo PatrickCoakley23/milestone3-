@@ -45,17 +45,28 @@
                                 <a class="nav-link" href="{{url_for('add_recipe')}}">Add Recipes</a>
                             </li>
                             <li class="nav-right mr-2">
-                                <a class="nav-link" href="">My Recipes</a>
+                                <a class="nav-link" href="{{url_for('my_recipes')}}">My Recipes</a>
                             </li>
                               <li class="nav-right mr-2">
-                                <a class="nav-link" href="">Logout</a>
+                                <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
                             </li>
                         </ul>
                     {% endif %}
                     </div>
                 </nav>
+        
     </header>
-
+           <div class="container" style="min-height:100% width:80%"></div>
+    			{% with messages = get_flashed_messages() %}
+						{% if messages %}
+						{% for message in messages %}
+						<div class="alert alert-warning alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="close"><span aria-hidden="true">&times;</span></button>
+                        {{ message }}
+                        </div>
+						{% endfor %}
+						{% endif %}
+						{% endwith %}
 
     <main>
         {% block content %}
@@ -69,7 +80,9 @@
         {% block login %}
         {% endblock %}
         {% block register %}
-        {% endblock %}
+        {% endblock%}
+        {% block my_recipe %}   
+        {% endblock %}  
     </main>
 
 

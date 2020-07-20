@@ -1,22 +1,5 @@
 {% extends 'base.html' %}
-{% block content %}     
-             
-<div class="container">
-   <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle btn-dropdown" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Filtered Search
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="{{url_for('get_recipes')}}">All Recipes</a>
-    <a class="dropdown-item" href="{{url_for('breakfast_recipes')}}">Breakfast</a>
-    <a class="dropdown-item" href="{{url_for('lunch_recipes')}}">Lunch</a>
-    <a class="dropdown-item" href="{{url_for('dinner_recipes')}}">Dinner</a>
-    <a class="dropdown-item" href="{{url_for('vegetarian_recipes')}}">Vegetarian</a>
-    <a class="dropdown-item" href="{{url_for('gluten_free_recipes')}}">Vegan</a>
-  </div>
-</div>
-</div>
-
+{% block my_recipe %}     
 <div class="opacity">
     <div class="container">
         <div class="row">
@@ -44,3 +27,4 @@
 {{ pagination.info }}
 {{ pagination.links }}
 {% endblock %}
+

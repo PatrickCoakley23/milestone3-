@@ -23,15 +23,16 @@ def load_user(user_id):
     return User.get(user_id)
 
 
-@app.route('/')
-def index(): 
+@app.route('/login')
+def login(): 
     if 'username' in session:
-        return 'You are logged in as ' + session['username']
-    return render_template('index.html')
+        flash('You are logged in as ' + session['username'])
+        return redirect(url_for('my_recipes'))
+    return render_template('login.html')
 
 
-@app.route('/login', methods=['POST', 'GET'])
-def login():
+@app.route('/update', methods=['POST', 'GET'])
+def update_login():
     users = mongo.db.users
     login_user = users.find_one({'name' : request.form['username']})
 
@@ -39,7 +40,7 @@ def login():
         if bcrypt.check_password_hash(login_user['password'], request.form.get('pass')):
             session['username'] = request.form['username']
             return redirect(url_for('get_recipes'))
-
+    
     return 'Invalid username/password combination'
 
 
@@ -54,15 +55,15 @@ def register():
             hashpass = bcrypt.generate_password_hash(password).decode('utf-8')
             users.insert({'name' : request.form.get('username'), 'password' : hashpass})
             session['username'] = request.form.get('username')
+            flash('Welcome to Patrick Coakley Nutrition, You have succesfully registered an account with us!')
             return redirect(url_for('get_recipes'))
         
         return 'That username already exists!'
-
     return render_template('register.html')
 
 
 
-@app.route('/recipes')
+@app.route('/')
 def get_recipes():
     per_page = 9
     recipes = mongo.db.recipes.find()
@@ -140,7 +141,9 @@ def update_recipe(recipe_id):
         'method': request.form.get('method'),
         'image_link': request.form.get('image_link'),
         'description': request.form.get('description'),
-        'permission_to_delete': True
+        'permission_to_delete': True,
+        'username': session['username']
+
     })   
     flash('recipe has been edited')
     return redirect(url_for('get_recipes'))
@@ -216,9 +219,23 @@ def gluten_free_recipes():
     return render_template('recipes.html', recipes=recipes, pagination=pagination)
 
 
+@app.route('/my_recipes')
+def my_recipes():
+    per_page = 9
+    recipes = recipes=mongo.db.recipes.find({'username': session['username']})
+    page = request.args.get(get_page_parameter(), type=int, default=1)
+    skips = per_page * (page - 1)
+    cursor = recipes.skip(skips).limit(per_page)
+    pagination = Pagination(page=page, total=recipes.count(), record_name='recipes', per_page=per_page, bs_version=4, css_framework='bootstrap', alignment='center')
+    return render_template('my_recipes.html', recipes=recipes, pagination=pagination)
 
 
-
+@app.route('/logout')
+def logout():
+    session.clear()
+    flash("You've been successfully logged out")
+    return redirect(url_for('get_recipes'))
+ 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
