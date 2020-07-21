@@ -158,14 +158,13 @@ def update_recipe(recipe_id):
 
     })   
     flash('recipe has been edited')
-    return redirect(url_for('get_recipes'))
+    return redirect(url_for('my_recipes'))
     
 
 @app.route('/delete_recipe/<recipe_id>')
 def delete_recipe(recipe_id):
     mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
-    flash('recipe has been deleted')
-    return redirect(url_for('get_recipes'))
+    return redirect(url_for('my_recipes'))
 
 @app.route('/my_recipes')
 def my_recipes():

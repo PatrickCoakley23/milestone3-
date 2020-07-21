@@ -125,6 +125,21 @@ hr {
     text-align: center;
 }
 
+.modal-title, .modal-body h6 {
+    color: #dc3545;
+}
+
+.modal-footer {
+    border-top: 1px solid black;
+}
+
+.modal-header {
+    border-bottom: 1px solid black;
+}
+
+.modal-body p {
+    color: black;
+}
 /*
 @media screen and (max-width: 992px) {
 .recipe_selected_img {
