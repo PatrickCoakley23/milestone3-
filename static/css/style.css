@@ -44,6 +44,11 @@ h2 {
     background-color: #bf5d1d;
 }
 
+.heading-center {
+    text-align: center;
+    text-transform: capitalize;
+}
+
 /* RECIPES HOME PAGE */
 
 .card-image-holder {
@@ -182,10 +187,16 @@ hr {
     color: whitesmoke;
 }
 
-.
+/* ACCESS DENIED PAGE */
 
+.access-jumbotron {
+    margin-top: 50px;
+    background-color: #272727
+}
 
-
+#access-btn-login {
+    text-align: end;
+}
 
 
 

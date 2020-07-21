@@ -182,6 +182,10 @@ def logout():
     session.clear()
     flash("You've been successfully logged out")
     return redirect(url_for('get_recipes'))
+
+@app.route('/access_denied')
+def access_denied():
+    return render_template("access_denied.html")
  
 
 
