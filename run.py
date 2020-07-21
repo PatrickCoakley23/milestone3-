@@ -119,7 +119,7 @@ def insert_recipe():
     }
        
     recipes.insert_one(enter_recipes)
-    return redirect(url_for("get_recipes"))
+    return redirect(url_for("my_recipes"))
 
 
 @app.route('/recipe_selected/<recipe_id>')

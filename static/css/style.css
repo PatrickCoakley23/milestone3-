@@ -39,6 +39,11 @@ h2 {
     background-color: #fff
 }
 
+.alert-warning {
+    color: white;
+    background-color: #bf5d1d;
+}
+
 /* RECIPES HOME PAGE */
 
 .card-image-holder {
