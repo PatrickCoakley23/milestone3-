@@ -2,19 +2,18 @@
 {% block content %}     
              
 <div class="container">
-   <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle btn-dropdown" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Filtered Search
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="{{url_for('get_recipes')}}">All Recipes</a>
-    <a class="dropdown-item" href="{{url_for('breakfast_recipes')}}">Breakfast</a>
-    <a class="dropdown-item" href="{{url_for('lunch_recipes')}}">Lunch</a>
-    <a class="dropdown-item" href="{{url_for('dinner_recipes')}}">Dinner</a>
-    <a class="dropdown-item" href="{{url_for('vegetarian_recipes')}}">Vegetarian</a>
-    <a class="dropdown-item" href="{{url_for('gluten_free_recipes')}}">Vegan</a>
-  </div>
+<div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    <li><a class="btn btn-primary" role="button" href=>All Recipes</a></li> 
+    {% for type in recipe_categories %}
+   <li><a class="btn btn-primary" role="button" href="{{ url_for ('recipe_category', recipe_type=type.recipe_category)}}">{{ type.recipe_category }}</a></li> 
+    {% endfor%}
+  </ul>
+  
 </div>
+
 </div>
 
 <div class="opacity">
