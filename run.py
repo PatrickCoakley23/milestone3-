@@ -39,10 +39,11 @@ def update_login():
     if login_user:
         if bcrypt.check_password_hash(login_user['password'], request.form.get('pass')):
             session['username'] = request.form['username']
-            return redirect(url_for('get_recipes'))
+            flash('You Have Successfully Logged In ' + session['username'])
+            return redirect(url_for('my_recipes'))
     
-    return 'Invalid username/password combination'
-
+    flash('Invalid username/password combination')
+    return redirect(url_for('login'))
 
 @app.route('/register', methods=['POST', 'GET'])
 def register():
@@ -58,7 +59,7 @@ def register():
             flash('Welcome to Patrick Coakley Nutrition, You have succesfully registered an account with us!')
             return redirect(url_for('get_recipes'))
         
-        return 'That username already exists!'
+        flash('That username already exists!')
     return render_template('register.html')
 
 
@@ -90,37 +91,40 @@ def recipe_category(recipe_type):
 
 @app.route('/add_recipe')
 def add_recipe():
-    return render_template('add_recipes.html',
-    recipe_categories = mongo.db.recipe_categories.find())
+    if 'username' in session:
+        return render_template('add_recipes.html',
+        recipe_categories = mongo.db.recipe_categories.find())
+    return redirect(url_for('access_denied'))
 
 
 
 @app.route('/insert_recipe', methods=["POST"])
 def insert_recipe():
-    recipes = mongo.db.recipes
-    
+    if 'username' in session:
+        recipes = mongo.db.recipes
+        
 
-    enter_recipes = {
-        'recipe_name': request.form.get('recipe_name'),
-        'recipe_category': request.form.get('recipe_category'),
-        'prep_time': request.form.get('prep_time'),
-        'cook_time': request.form.get('cook_time'),
-        'calories': request.form.get('calories'),
-        'protein': request.form.get('protein'),
-        'carbs': request.form.get('carbs'),
-        'fat': request.form.get('fat'),
-        'servings': request.form.get('servings'),
-        'ingredients': request.form.get('ingredients'),
-        'method': request.form.get('method'),
-        'image_link': request.form.get('image_link'),
-        'description': request.form.get('description'),
-        'permission_to_delete': True,
-        'username': session['username']
-    }
-       
-    recipes.insert_one(enter_recipes)
-    return redirect(url_for("my_recipes"))
-
+        enter_recipes = {
+            'recipe_name': request.form.get('recipe_name'),
+            'recipe_category': request.form.get('recipe_category'),
+            'prep_time': request.form.get('prep_time'),
+            'cook_time': request.form.get('cook_time'),
+            'calories': request.form.get('calories'),
+            'protein': request.form.get('protein'),
+            'carbs': request.form.get('carbs'),
+            'fat': request.form.get('fat'),
+            'servings': request.form.get('servings'),
+            'ingredients': request.form.get('ingredients'),
+            'method': request.form.get('method'),
+            'image_link': request.form.get('image_link'),
+            'description': request.form.get('description'),
+            'permission_to_delete': True,
+            'username': session['username']
+        }
+        
+        recipes.insert_one(enter_recipes)
+        return redirect(url_for("my_recipes"))
+    return redirect(url_for('access_denied'))
 
 @app.route('/recipe_selected/<recipe_id>')
 def recipe_selected(recipe_id):
@@ -130,61 +134,75 @@ def recipe_selected(recipe_id):
 
 @app.route('/edit_recipe/<recipe_id>')
 def edit_recipe(recipe_id):
-    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    categories = mongo.db.recipe_categories.find()
-    return render_template('edit_recipe.html', recipe=recipe, 
-                            categories=categories)
-    
+    if 'username' in session:
+        recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+        categories = mongo.db.recipe_categories.find()
+        return render_template('edit_recipe.html', recipe=recipe, 
+                                categories=categories)
+    return redirect(url_for('access_denied'))
+
+
 @app.route('/update_recipe/<recipe_id>', methods=["POST"])
 def update_recipe(recipe_id):
-    recipes = mongo.db.recipes
-    recipes.update( {'_id': ObjectId(recipe_id)},
-    {
-        'recipe_name': request.form.get('recipe_name'),
-        'recipe_category': request.form.get('recipe_category'),
-        'prep_time': request.form.get('prep_time'),
-        'cook_time': request.form.get('cook_time'),
-        'calories': request.form.get('calories'),
-        'protein': request.form.get('protein'),
-        'carbs': request.form.get('carbs'),
-        'fat': request.form.get('fat'),
-        'servings': request.form.get('servings'),
-        'ingredients': request.form.get('ingredients'),
-        'method': request.form.get('method'),
-        'image_link': request.form.get('image_link'),
-        'description': request.form.get('description'),
-        'permission_to_delete': True,
-        'username': session['username']
+    if 'username' in session:
+        recipes = mongo.db.recipes
+        recipes.update( {'_id': ObjectId(recipe_id)},
+        {
+            'recipe_name': request.form.get('recipe_name'),
+            'recipe_category': request.form.get('recipe_category'),
+            'prep_time': request.form.get('prep_time'),
+            'cook_time': request.form.get('cook_time'),
+            'calories': request.form.get('calories'),
+            'protein': request.form.get('protein'),
+            'carbs': request.form.get('carbs'),
+            'fat': request.form.get('fat'),
+            'servings': request.form.get('servings'),
+            'ingredients': request.form.get('ingredients'),
+            'method': request.form.get('method'),
+            'image_link': request.form.get('image_link'),
+            'description': request.form.get('description'),
+            'permission_to_delete': True,
+            'username': session['username']
 
-    })   
-    flash('recipe has been edited')
-    return redirect(url_for('my_recipes'))
+        })   
+        flash('recipe has been edited')
+        return redirect(url_for('my_recipes'))
+    return redirect(url_for('access_denied'))
     
 
 @app.route('/delete_recipe/<recipe_id>')
 def delete_recipe(recipe_id):
-    mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
-    return redirect(url_for('my_recipes'))
+    if 'username' in session:
+        mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
+        return redirect(url_for('my_recipes'))
+    return redirect(url_for('access_denied'))
+
 
 @app.route('/my_recipes')
 def my_recipes():
-    per_page = 9
-    recipes = recipes=mongo.db.recipes.find({'username': session['username']})
-    page = request.args.get(get_page_parameter(), type=int, default=1)
-    skips = per_page * (page - 1)
-    cursor = recipes.skip(skips).limit(per_page)
-    pagination = Pagination(page=page, total=recipes.count(), record_name='recipes', per_page=per_page, bs_version=4, css_framework='bootstrap', alignment='center')
-    return render_template('my_recipes.html', recipes=recipes, pagination=pagination)
-
+    if 'username' in session:
+        per_page = 9
+        recipes = recipes=mongo.db.recipes.find({'username': session['username']})
+        page = request.args.get(get_page_parameter(), type=int, default=1)
+        skips = per_page * (page - 1)
+        cursor = recipes.skip(skips).limit(per_page)
+        pagination = Pagination(page=page, total=recipes.count(), record_name='recipes', per_page=per_page, bs_version=4, css_framework='bootstrap', alignment='center')
+        return render_template('my_recipes.html', recipes=recipes, pagination=pagination)
+    return redirect(url_for('access_denied'))
 
 @app.route('/logout')
 def logout():
-    session.clear()
-    flash("You've been successfully logged out")
-    return redirect(url_for('get_recipes'))
+    if 'username' in session:
+        session.clear()
+        flash("You've been successfully logged out")
+        return redirect(url_for('get_recipes'))
+    return redirect(url_for('access_denied'))
 
 @app.route('/access_denied')
 def access_denied():
+    if 'username' in session:
+        flash('You are logged in as ' + session['username'])
+        return redirect(url_for('my_recipes'))
     return render_template("access_denied.html")
  
 
