@@ -2,18 +2,20 @@
 {% block content %}     
              
 <div class="container">
-<div class="dropdown">
-  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
-  <span class="caret"></span></button>
-  <ul class="dropdown-menu">
-    <li><a class="btn btn-primary" role="button" href=>All Recipes</a></li> 
-    {% for type in recipe_categories %}
-   <li><a class="btn btn-primary" role="button" href="{{ url_for ('recipe_category', recipe_type=type.recipe_category)}}">{{ type.recipe_category }}</a></li> 
-    {% endfor%}
-  </ul>
-  
-</div>
-
+    <div class="row">
+        <div class="col">
+            <div class="dropdown">
+                <button class="btn btn-recipe-dropdown dropdown-toggle" type="button" data-toggle="dropdown">Filter Recipes
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a class="btn dropdown-item" role="button" href="{{url_for('get_recipes')}}">All Recipes</a></li> 
+                {% for type in recipe_categories %}
+                    <li><a class="btn dropdown-item" role="button" href="{{ url_for ('recipe_category', recipe_type=type.recipe_category)}}">{{ type.recipe_category }}</a></li> 
+                {% endfor%}
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="opacity">
