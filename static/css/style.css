@@ -50,6 +50,8 @@ h2 {
 .alert-warning {
     color: white;
     background-color: #bf5d1d;
+    border: 0;
+    margin: 0;
 }
 
 .heading-center {
@@ -57,10 +59,13 @@ h2 {
     text-transform: capitalize;
 }
 
+.navbar-brand-img {
+    width: 117px;
+    height: 45px;
+}
+
 /* HERO IMAGE */
 .hero-image {
-    
-
     height: 100vh;
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/hero-image.jpg);
     background-position: center;
@@ -68,6 +73,50 @@ h2 {
     background-size: cover;
     position: relative;
     overflow: hidden;
+}
+
+@media screen and (max-width: 992px) {
+  .hero-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      url(../images/hero-image2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+  }
+}
+
+@media screen and (max-width: 576px) {
+    .hero-text {
+        top: 45%;
+    }
+}
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.hero-text img {
+    width: 400px;
+    height: 400px;
+}
+
+.btn-cta {
+  display: block;
+  font-weight: bold;
+  width: 110px;
+  border-radius: 20px;
+  background-color: #46b123ed;
+  color: white;
+  position: relative;
+  left: 140px;
 }
 
 

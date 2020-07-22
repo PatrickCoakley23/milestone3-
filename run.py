@@ -72,6 +72,7 @@ def register():
 
 @app.route('/hero_image')
 def homepage():
+    flash('Create An Account For Free To Add Your Own Recipes')
     return render_template('hero_image.html')
 
 @app.route('/')
