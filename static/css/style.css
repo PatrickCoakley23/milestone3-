@@ -1,6 +1,14 @@
 header {
-    background-color: #272727;
+  background-color: #272727;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1;
     margin-bottom: 50px;
+}
+
+#hero-header {
+    margin: 0;
 }
 
 body {
@@ -48,6 +56,20 @@ h2 {
     text-align: center;
     text-transform: capitalize;
 }
+
+/* HERO IMAGE */
+.hero-image {
+    
+
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/hero-image.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
 
 /* RECIPES HOME PAGE */
 
@@ -124,6 +146,7 @@ hr {
     margin-left: 25px;
 }
 
+
 @media screen and (min-device-width: 768px) and (max-device-width: 992px) {
     .card-body p {
         font-size: 12px;
@@ -135,7 +158,7 @@ hr {
         height: 200px;
     }
 }
- 
+
 /* RECIPE SELECTED */ 
 
 .recipe_selected_img {

@@ -70,7 +70,9 @@ def register():
         flash('That username already exists!')
     return render_template('register.html')
 
-
+@app.route('/hero_image')
+def homepage():
+    return render_template('hero_image.html')
 
 @app.route('/')
 def get_recipes():
