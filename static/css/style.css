@@ -123,6 +123,18 @@ hr {
 .dropdown {
     margin-left: 25px;
 }
+
+@media screen and (min-device-width: 768px) and (max-device-width: 992px) {
+    .card-body p {
+        font-size: 12px;
+    }
+    .card-body h5 {
+        font-size: 16px;
+    }
+    .card-image-holder {
+        height: 200px;
+    }
+}
  
 /* RECIPE SELECTED */ 
 
@@ -207,4 +219,5 @@ hr {
     background: #bf5d1d;
     border: #bc9982;
 }
-}
+
+
