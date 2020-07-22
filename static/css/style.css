@@ -201,6 +201,10 @@ hr {
     text-align: end;
 }
 
-
-
-
+.btn-bottom {
+    margin-bottom: 30px;
+    margin-top: 15px;
+    background: #bf5d1d;
+    border: #bc9982;
+}
+}
