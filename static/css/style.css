@@ -157,6 +157,9 @@ hr {
   }
 }
 */
+.uppercase {
+    text-transform: uppercase;
+}
 
 .recipe-selected {
     display: flex;

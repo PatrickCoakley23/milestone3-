@@ -15,36 +15,46 @@
             <p>{{recipe.description}}</p>
             <div class="row">
                 <div class="col-4">
-                    <h5>Preparation Time</h5>
-                    <p>{{recipe.prep_time}}</p>
+                    <h5><i class="far fa-clock"></i> Preparation Time</h5>
+                    <p>{{recipe.prep_time}} mins</p>
                 </div>
                 <div class="col-4">
-                    <h5>Cooking Time</h5>
-                    <p>{{recipe.cook_time}}</p>
+                    <h5><i class="far fa-clock"></i> Cooking Time</h5>
+                    <p>{{recipe.cook_time}} mins</p>
                 </div>
                 <div class="col-4">
-                    <h5>Servings</h5>
+                    <h5><i class="fas fa-utensils"></i> Servings</h5>
                     <p>{{recipe.servings}}</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-3">
                     <h5>Calories</h5>
-                    <p>{{recipe.calories}}</p>
+                    <p>{{recipe.calories}}kcals</p>
                 </div>
                     <div class="col-3">
                     <h5>Protein</h5>
-                    <p>{{recipe.protein}}</p>
+                    <p>{{recipe.protein}}g</p>
                 </div>
-                    <div class="col-3">
+                <div class="col-3">
                     <h5>Carbs</h5>
-                    <p>{{recipe.carbs}}</p>
+                    <p>{{recipe.carbs}}g</p>
                 </div>
-                    <div class="col-3">
+                <div class="col-3">
                     <h5>Fat</h5>
-                    <p>{{recipe.fat}}</p>
+                    <p>{{recipe.fat}}g</p>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4 offset-2">
+            <h5>Meal Type</h5>
+            <p>{{recipe.recipe_category}}</p>
+        </div>
+        <div class="col-4 offset-2">
+            <h5>Author</h5>
+            <p class="uppercase">{{recipe.username}}</p>
         </div>
     </div>
     <div class="row">

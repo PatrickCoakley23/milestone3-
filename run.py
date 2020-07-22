@@ -34,7 +34,7 @@ def login():
 @app.route('/update', methods=['POST', 'GET'])
 def update_login():
     users = mongo.db.users
-    login_user = users.find_one({'name' : request.form['username']})
+    login_user = users.find_one({'username' : request.form['username']})
 
     if login_user:
         if bcrypt.check_password_hash(login_user['password'], request.form.get('pass')):
@@ -49,14 +49,22 @@ def update_login():
 def register():
     if request.method == 'POST':
         users = mongo.db.users
-        existing_user = users.find_one({'name' : request.form.get('username')})
+        existing_user = users.find_one({'username' : request.form.get('username')})
 
         if existing_user is None:
             password = request.form.get("pass")
+            username = request.form.get('username')
+            fullname = request.form.get('fullname')
+            email = request.form.get('email')
             hashpass = bcrypt.generate_password_hash(password).decode('utf-8')
-            users.insert({'name' : request.form.get('username'), 'password' : hashpass})
+            users.insert({'username' : username, 
+                        'password' : hashpass,
+                        'fullname' : fullname,
+                        'email' : email
+                        })
+
             session['username'] = request.form.get('username')
-            flash('Welcome to Patrick Coakley Nutrition, You have succesfully registered an account with us!')
+            flash('Hello ' + session['username'] + ' Welcome to Patrick Coakley Nutrition')
             return redirect(url_for('get_recipes'))
         
         flash('That username already exists!')
@@ -102,7 +110,8 @@ def add_recipe():
 def insert_recipe():
     if 'username' in session:
         recipes = mongo.db.recipes
-        
+        user = mongo.db.users.find_one({'username': session['username']})
+
 
         enter_recipes = {
             'recipe_name': request.form.get('recipe_name'),
@@ -118,9 +127,9 @@ def insert_recipe():
             'method': request.form.get('method'),
             'image_link': request.form.get('image_link'),
             'description': request.form.get('description'),
-            'permission_to_delete': True,
             'username': session['username']
-        }
+            
+            }
         
         recipes.insert_one(enter_recipes)
         return redirect(url_for("my_recipes"))
@@ -161,7 +170,6 @@ def update_recipe(recipe_id):
             'method': request.form.get('method'),
             'image_link': request.form.get('image_link'),
             'description': request.form.get('description'),
-            'permission_to_delete': True,
             'username': session['username']
 
         })   
