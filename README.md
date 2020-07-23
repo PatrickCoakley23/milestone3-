@@ -82,5 +82,146 @@ I used [Balsamic](https://balsamiq.com/) to build the wireframes. I created mock
 </p>
 </details>
 
- ## **Design**
+## **Design**
+
+### Framework
+I used [Bootstrap 4]( https://getbootstrap.com/) to build the framework of the website. Bootstrap was  the main tool frame responsible for making the PCN website responsive. This means the website automatically resizes itself to look good on all devices, be it mobile, tablet, laptop or desktop. 
+
+### Colour Scheme
+
+- **Black** - Black is the dominant colour throughout this website. Black is elegant, sophisticated and it implies a premium brand. The black background gives prominence the content on the site.
+
+- **Burnt Orange** - (#BF5D1D) This Burnt Orange colour is consistently used throughout the website call to action buttons, flash messages and other subtle styling. This shade of orange is juxtaposed well with the elegant black to offer a modern feel which fits well within the health industry.
+
+- **Silver** - (#B7B4B2) This Silver colour is the main font colour for the body of the website. It is also used in the borders of the entry forms to offer a 3d feel against the black background.
+
+- **Gold** - (#BC9982) This Light shade of gold is used predominantly for the headings of the website. The light cold contrast well with the background and with the Oswald font gives a classy feel.
+
+#### List of the other colours used throughout the website: 
  
+-  #111111 (Lighter Shade of Black)
+
+- #46B123ED (Green)
+
+- #DC3545 (Red)
+
+- Whitesmoke
+
+- White
+
+### Typography 
+The “Oswald” font is the font used for all the headings and the “Open Sans” font is the font used for the body of the website. Sans serif is set as the fallback font in case for any reason the font isn't being imported into the site correctly.
+
+### Imagery
+Imagery is a reoccurring theme throughout the website. I felt images played a vital role in influencing a users decision in choosing a recipe. 
+The Hero image especially works well in drawing the user in and given the website a very modern feel.
+
+### Logo
+I created the logo on [Tailor Brands]( https://www.tailorbrands.com/). Although it is a paid service i feel the level of detail and quality of the template they use is worth it. I decided to go with a logo with a slogan for personal reasons as i have used mostly initial styled logos in the past. The slogan here "Eat Yourself Healthy" acts like a call to action, enticing the user to navigate the website and hopefully register an account. The Red logo color and the black font works well against the clean hero image. 
+<h2 align="center"><img src="README/images/logo_readme.jpg" max-width="30%"></h2>
+
+## **LAYOUT**
+
+### Homepage 
+
+The homepage sets up to be enticing while at the same time obvious to the user the purpose of the website. The Hero Image paired with the Logo sets the theme of the website as healthy food recipe site. 
+
+- There is two obvious call to actions:
+
+  1.   Flash Message - Informs users that they must register an account to add their own recipes. 
+
+  2.   Recipes Button - Users are prompted to click 'Recipes' button to bring them to the main recipes page. 
+
+<details>
+<summary>Homepage <strong>(Click dropdown for images)</strong></summary>
+<p align="center">
+  <img height="350" src="README/images/homepage_cta.jpg" style="max-width:100%;"></a>
+</p>
+</details>  
+
+---
+### Recipes Page 
+
+Although this is not the homepage of the site, it is the main page of the website. Each website is presented in the form of a [Bootstrap card]( https://getbootstrap.com/docs/4.0/components/card/#card-groups). Users get a snippet of the recipe, and can get more details of each recipe if they click the button on the button of each recipe card deck. 
+Users can also use the filtered dropdown to select different recipe categories(breakfast/lunch/dinner/vegetarian/Gluten Free). 
+I included a pagination feature on this page, to safeguard against the future growth of this website where users would potentially have to scroll endlessly whilst browsing the website. 
+With the pagination function, the recipe's page is capped at 9 recipes per page.
+
+Users do not need to be logged in to access this page. 
+
+<details>
+<summary>Card Deck <strong>(Click dropdown for images)</strong></summary>
+<p align="center">
+  <img height="350" src="README/images/card_deck.png" style="max-width:100%;"></a>
+</p>
+</details>  
+<details>
+<summary>Filter Dropdown <strong>(Click dropdown for images)</strong></summary>
+<p align="center">
+  <img height="350" src="README/images/dropdown.png" style="max-width:100%;"></a>
+</p>
+</details>  
+<details>
+<summary>Pagination <strong>(Click dropdown for images)</strong></summary>
+<p align="center">
+  <img height="350" src="README/images/pagination.jpg" style="max-width:100%;"></a>
+</p>
+</details>  
+
+---
+### About Page 
+The About page is to reaffirm to the user the purpose of the website. The user will be able to gain trust that **'The Fitness Kitchen'** is a genuine brand and set up for genuine reasons. 
+
+Login is not required for this page as this may be the final affirmation the user needs before register an account with **'The Fitness Kitchen'**
+
+<details>
+<summary>About Page <strong>(Click dropdown for images)</strong></summary>
+<p align="center">
+  <img height="350" src="" style="max-width:100%;"></a>
+</p>
+</details>  
+
+---
+
+### Recipe Selected Page 
+Once the user clicks the recipe button on the card deck they are brought to that specific recipes details, ingredients and method. 
+Users are not required to log in to access these pages. If the user is logged in and they are the author of that specific recipe they have access to edit and delete the recipe. 
+
+<details>
+<summary>Default View (no edit/delete) <strong>(Click dropdown for images)</strong></summary>
+<p align="center">
+  <img height="350" src="README/images/recipe_default.png" style="max-width:100%;"></a>
+</p>
+</details>  
+<details>
+<summary>Edit and Delete Buttons appear if the user is logged in and they've created the recipe <strong>(Click dropdown for images)</strong></summary>
+<p align="center">
+  <img height="350" src="README/images/users_recipe.jpg" style="max-width:100%;"></a>
+</p>
+</details>  
+
+---
+### Add Recipe / Edit Recipe 
+
+The Add and Edit recipe pages are very similar. The only main difference is that the fields are pre-populated with the fields the user inputted when they initially added the recipe. All fields are required so the user can't leave any blank recipes. 
+
+Login is required for these pages. 
+<details>
+<summary>Add Recipe <strong>(Click dropdown for images)</strong></summary>
+<p align="center">
+  <img height="350" src="README/images/add_recipe.png" style="max-width:100%;"></a>
+</p>
+</details>  
+<details>
+<summary>Edit Recipe <strong>(Click dropdown for images)</strong></summary>
+<p align="center">
+  <img height="350" src="README/images/edit_recipe.png" style="max-width:100%;"></a>
+</p>
+</details>  
+
+
+
+
+
+
+
