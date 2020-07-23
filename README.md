@@ -215,9 +215,116 @@ Login is required for these pages.
 <details>
 <summary>Edit Recipe <strong>(Click dropdown for images)</strong></summary>
 <p align="center">
-  <img height="350" src="README/images/edit_recipe.png" style="max-width:100%;"></a>
+  <img height="350" src="README/images/.png" style="max-width:100%;"></a>
 </p>
 </details>  
+
+---
+### Delete Recipe 
+The Delete Recipe functionality doesn't have a page on its own, but if the user is logged in and they wish to delete their recipe, they are presented with a model to confirm deletion. This is to safeguard against a user deleting a recipe unintentionally. 
+
+Users must be logged in, and they must be the creator of that specific recipe in order to have access to delete the recipe. 
+
+<details>
+<summary> Delete Recipe <strong>(Click dropdown for images)</strong></summary>
+<p align="center">
+  <img height="350" src="README/images/delete_recipe.png" style="max-width:100%;"></a>
+</p>
+</details>  
+
+---
+### My Recipes
+If Users are logged in , they can click the 'My Recipe' tab on the nav bar and it will showcase only the recipes the user has added. 
+Pagination is also included on this page for the very reasons outline in the Recipes Page. 
+
+<details>
+<summary> My recipes <strong>(Click dropdown for images)</strong></summary>
+<p align="center">
+  <img height="350" src="README/images/my_recipes.png" style="max-width:100%;"></a>
+</p>
+</details>  
+
+---
+### Login and Registration Pages
+Authentication wasn't required for this Milestone Project, but after I implemented the CRUD functionality and I had a minimum viable product, i decided to implement a login and registration. Having authentication allows for a more secure website. Users can't delete other user's recipes. Authentication also allows the website to be more personal. Users have their own 'My Recipes section' and are also greeted with their session username in the flash messages. 
+
+If users are already logged in and unintentionally get redirected to the 'Login' page by the browser, they will be redirected to their own recipes page and a flash message will greet them "You are already logged in". I decided against redirecting logged in users away from the 'Register' page as it's not a distinct possibility that a user may want to register another account. 
+
+<details>
+<summary>Login Page <strong>(Click dropdown for images)</strong></summary>
+<p align="center">
+  <img height="350" src="README/images/login.png" style="max-width:100%;"></a>
+</p>
+</details>  
+
+<details>
+<summary>Register Page <strong>(Click dropdown for images)</strong></summary>
+<p align="center">
+  <img height="350" src="README/images/register_page.png" style="max-width:100%;"></a>
+</p>
+</details>
+
+<details>
+<summary>Enter (/login) in the browser and Already Logged, redirected with message <strong>(Click dropdown for images)</strong></summary>
+<p align="center">
+  <img height="350" src="README/images/user_already_logged_in.jpg" style="max-width:100%;"></a>
+</p>
+</details>  
+
+<details>
+<summary>Personal greeting upon Logging in<strong>(Click dropdown for images)</strong></summary>
+<p align="center">
+  <img height="350" src="README/images/log_in_message.jpg" style="max-width:100%;"></a>
+</p>
+</details>  
+
+---
+### Access Denied Page 
+if a user is not logged in and tries intentionally or unintentionally to reach a page that requires a session log in, then they will be greeted with this message below. 
+Users have the option to log in, register or else navigate back by clicking the previous button on the browser tab. 
+
+<details>
+<summary>Access Denied<strong>(Click dropdown for images)</strong></summary>
+<p align="center">
+  <img height="350" src="README/images/access_denied.png" style="max-width:100%;"></a>
+</p>
+</details>  
+
+---
+### Base Template 
+The base.html contains the basic layout which is common to all the other templates, and it is from this base template that we extend the layout for other pages.
+We modify the parent template(base.html) using the child templates (e.g the pages listed above). The {% extend %} must be the first tag in the child templates. This tag tells the template engine that this template extends from the parent template or ( base.html ).
+
+We then use Template inheritance eg. 
+
+    {% block content %}
+    {& endblock %}
+
+To override the base.html page and add our custom code to the child elements. 
+
+The Base.Html page in this website contains all the relevant links to our bootstrap framework, font awesome, css files, Jquery and other relevant meta tags. The Base.html also sets the template for the navbar and flash messages used throughout the website and the reoccurring css styles like font, colour, background colour etc. 
+
+The Navbar differs slightly for users who are logged in and users who are not. 
+
+Users who are logged in see 'Recipes / About / Login / Register". 
+
+Users who are not logged in see "Recipes/ Add Recipes / My Recipes / Logout".
+
+<details>
+<summary>Navbar for logged in users <strong>(Click dropdown for images)</strong></summary>
+<p align="center">
+  <img height="350" src="README/images/navbar_logged_in.jpg" style="max-width:100%;"></a>
+</p>
+</details>  
+
+<details>
+<summary>Navbar for user's who are not logged in <strong>(Click dropdown for images)</strong></summary>
+<p align="center">
+  <img height="350" src="README/images/navbar_not_logged_in.jpg" style="max-width:100%;"></a>
+</p>
+</details>  
+
+
 
 
 
