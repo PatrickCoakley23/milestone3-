@@ -324,11 +324,204 @@ Users who are not logged in see "Recipes/ Add Recipes / My Recipes / Logout".
 </p>
 </details>  
 
+---
+
+## TECHNOLOGIES
+
+### Languages Used 
+
+1.  [HTML5]( https://en.wikipedia.org/wiki/HTML5) - is the standard markup language for documents designed to be displayed in a web browser.
+2. [CSS3]( https://en.wikipedia.org/wiki/Cascading_Style_Sheets) - Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language like HTML.
+3. [Python]( https://www.python.org/) - Python is an interpreted, high-level, general-purpose programming language.
+4. [Javascript/Jquery]( https://en.wikipedia.org/wiki/JavaScript) - JavaScript is among the most powerful and flexible programming languages of the web. It powers the dynamic behavior on most websites.**
+
+ ** JavaScript wasn't used directly in this project but it was imported by Bootstrap for some of the functionality(eg. Collapsible Navbar, Model)
+
+ ### Frameworks, Libraries & Programs Used 
 
 
+ 1. [Bootstrap 4.4.1:]( https://getbootstrap.com/docs/4.4/getting-started/introduction/)
+    - Bootstrap was used to assist with the responsiveness and styling of the website.</li>
+
+ 2. [Flask]( https://flask.palletsprojects.com/en/1.1.x/)
+    - Flask is a lightweight WSGI web application framework. It is designed to make getting started quick and easy, with the ability to scale up to complex applications.
+
+3. [Google Fonts:]( https://fonts.google.com/)
+    - Google fonts were used to import the 'Oswald' font and the 'Open Sans' font into the style.css file which is used on all pages throughout the website.
+
+4. [Font Awesome:]( https://fontawesome.com/)
+    - Font Awesome was used on throughout the website to add icons for aesthetic and UX purposes.
+
+5.  [Git]( https://git-scm.com/)
+    - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
+
+6. [GitHub:]( https://github.com/)
+    - GitHub is used to store the projects code after being pushed from Git.
+
+7. [Balsamiq:]( https://balsamiq.com/)
+    - Balsamiq was used to create the wireframes during the design process.
+
+8. [PEP8]( http://pep8online.com/)
+    - Python style guide checker. PEP8 is a tool to check your Python code against some of the style conventions in PEP 8.
+
+9. [MongoDB]( https://www.mongodb.com/)
+    - MongoDB is a cross-platform document-oriented database program. 
+
+10. [The W3C Markup Validator]( https://validator.w3.org/) and [W3C CSS Validator Services]( https://jigsaw.w3.org/css-validator/) 
+    - Used to validate the HTML and CSS of the project to ensure there were no syntax errors in the project.
+
+## FEATURES
+
+- CRUD functionality is the main features of the project. 
+    - **Create** Logged in users can create a new recipe by submitting the add recipe form. Users who are not registered can also create an account. 
+    - **Read** All users have access to see all the recipe cards and can select each recipe for more details if they are logged in or not.
+    - **Update** Logged in users can edit only their own recipes. 
+    - **Delete** Logged in users can delete only their own recipes. 
+
+- Locate - Users can filter recipes under different categories in the dropdown menu. 
+- Pagination - is used on the recipes page and my recipes page in order to de-clutter the website page. 
 
 
+### Future Implementation
+
+- I would look to improve the process of uploading an image to [MongoDB]( https://www.mongodb.com/) 
+    - Currently users can only upload images by providing the web address. I found this [Pretty Printed]( https://www.youtube.com/watch?v=DsgAuceHha4) tutorial on Youtube which could help with this functionality, but with the tight two week time frame i didn't have time to implement this.
+- Filter by date on 'Recipes' page and 'My Recipes Page'.
+    - This would help so fresh content is shown first. 
+- Admin Account
+    - Currently i only have access to delete and change data from [MongoDB]( https://www.mongodb.com/). It would be more efficient to have permission and access to manage the website from an Admin Account.
+- Users Interaction  
+    - Allow users to comment on other recipes and also rate recipes. 
+- Full Text Search
+    - I felt this would be more appropriate for when the website grows and their is more content for the user to search through. 
+- Delete an Account. 
+    - Allow users access to delete their own account so they don't feel trapped by **The Fitness Kitchen**. 
+
+## TESTING 
+Manual testing was the only requirment to access the functionality, usability and responsiveness and data management of my full stack web application.
+
+I carried out manual testing and documented any errors/random side-effects captured in the DevTools. I loaded the website several times, and forced browser refresh to try and catch any errors but thankfully there was none.
+
+<details>
+    <summary>Dev Tool Testing <strong>(Click dropdown for images)</strong></summary>
+    <p align="center">
+    <img height="350" src="README/testing/dev_tool.jpg" style="max-width:100%;"></a>
+    </p>
+    </details> 
+
+### Responsiveness
+I carried out extensive testing of the responsiveness of my website by checking how the website rendered on different devices and on lower screen widths.
+I have showcased screngrabs of how the website pages rendered on desktop/laptop view, tablet and mobile view. 
+
+Testing in [Chrome Developer Tools]( https://developers.google.com/web/tools/chrome-devtools) was carried out on an ongoing basis to check the repsonsiveness and carried out debugging of issues.
+
+#### HomePage (Hero Image)
+Whilst working on the project i didn't like how the fruit and vegetables on the Hero Image went out of view on smaller screen widths below 992px so i implimented a media query to solve this issue.
+
+<details>
+    <summary>Home Page Responsiveness <strong>(Click dropdown for images)</strong></summary>
+        <p align="center">
+        <img height="350" src="README/testing/responsiveness_home.png" style="max-width:100%;"></a>
+        </p>
+        <p align="center">
+        <img height="350" src="README/testing/responsiveness_home_ipad.png" style="max-width:100%;"></a>
+        </p>
+        <p align="center">
+        <img height="350" src="README/testing/responsiveness_home_mobile.png" style="max-width:100%;"></a>
+        </p>
+</details> 
+
+#### Recipes Page
+During debugging i didn't like the look of how the recipes page rendered on Ipad only (not Ipad Pro) so i made a media query for tabelt screen widths with changed the image size and font size. I didn't provide screengrabs for the filtered recipes pages or the 'My Recipe's Page as they follow the same template.
+
+<details>
+    <summary>Recipe Page Responsiveness <strong>(Click dropdown for images)</strong></summary>
+        <p align="center">
+        <img height="350" src="README/testing/responsiveness_recipes.png" style="max-width:100%;"></a>
+        </p>
+        <p align="center">
+        <img height="350" src="README/testing/responsiveness_recipes_ipad.png" style="max-width:100%;"></a>
+        </p>
+        <p align="center">
+        <img height="350" src="README/testing/responsiveness_recipes_mobile.png" style="max-width:100%;"></a>
+        </p>
+</details> 
+
+#### Add/Edit Recipe
+I just provided the screen grab's of the add recipe form as the edit form follows the same template. The form fields are single columns on smaller screen widths. 
+<details>
+    <summary>Add/Edit Recipe Page Responsiveness <strong>(Click dropdown for images)</strong></summary>
+        <p align="center">
+        <img height="350" src="README/testing/responsiveness_add_recipe.png" style="max-width:100%;"></a>
+        </p>
+        <p align="center">
+        <img height="350" src="README/testing/responsiveness_add_recipe_ipad.png" style="max-width:100%;"></a>
+        </p>
+        <p align="center">
+        <img height="350" src="README/testing/responsiveness_add_recipe_mobile.png" style="max-width:100%;"></a>
+        </p>
+</details> 
+
+#### Login, Registration and Access Denied Pages  
+Nothing was changed for these pages as they rendered fine on all devices
+<details>
+    <summary>Login Page Responsiveness <strong>(Click dropdown for images)</strong></summary>
+        <p align="center">
+        <img height="350" src="README/testing/responsiveness_login.png" style="max-width:100%;"></a>
+        </p>
+        <p align="center">
+        <img height="350" src="README/testing/responsiveness_login_ipad.png" style="max-width:100%;"></a>
+        </p>
+        <p align="center">
+        <img height="350" src="README/testing/responsiveness_login_mobile.png" style="max-width:100%;"></a>
+        </p>
+</details> 
+<details>
+    <summary>Registration Page Responsiveness <strong>(Click dropdown for images)</strong></summary>
+        <p align="center">
+        <img height="350" src="README/testing/responsiveness_register.png" style="max-width:100%;"></a>
+        </p>
+        <p align="center">
+        <img height="350" src="README/testing/responsiveness_register_ipad.png" style="max-width:100%;"></a>
+        </p>
+        <p align="center">
+        <img height="350" src="README/testing/responsiveness_register_mobile.png" style="max-width:100%;"></a>
+        </p>
+</details> 
+<details>
+<summary>Access Denied Page Responsiveness <strong>(Click dropdown for images)</strong></summary>
+        <p align="center">
+        <img height="350" src="README/testing/responsiveness_access_denied.png" style="max-width:100%;"></a>
+        </p>
+        <p align="center">
+        <img height="350" src="README/testing/responsiveness_access_denied_ipad.png" style="max-width:100%;"></a>
+        </p>
+        <p align="center">
+        <img height="350" src="README/testing/responsiveness_access_denied_mobile.png" style="max-width:100%;"></a>
+        </p>
+</details> 
 
 
+### Testing on different browsers and devices 
 
+I created a Testing Matrix in Excel to record my findings. 
+
+<details>
+    <summary>Testing Matrix<strong>(Click dropdown for images)</strong></summary>
+    <p align="center">
+    <img height="350" src="README/testing_matrix/testing_matrix.png" style="max-width:100%;"></a>
+    </p>
+    </details> 
+
+* **the main points from this type of testing**
+    
+  - The Website was tested on Google Chrome,Internet Explorer, Microsoft Edge, Mozilla Firefox and Safari browsers.
+
+  - The website was viewed on a variety of devices such as Desktop, Large Monitor, Laptop, iPhone7, iPhone 8 & iPhoneX and other samsung devices.
+
+  - A large amount of testing was done to ensure that all pages were linking correctly.
+
+  - Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
+
+  - Internt Explorer performed poorly yet again. Buttons are either positioned incorrectly or don’t appear at all. Horizontal rules are also out of position on Internet Explorer.         
 
