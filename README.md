@@ -697,4 +697,25 @@ To run this project on your own IDE follow the instructions below. Ensure you ha
 
 ## CREDITS 
 
+### Code
 - I followed this online tutorial on [Youtube]( https://www.youtube.com/watch?v=vVx1737auSE&t=882s) to create the authentication. I needed to change the code myself as this video was 4 years old. The (Flask-Brypt)[https://flask-bcrypt.readthedocs.io/en/latest/) documentation helped with this. 
+- I used this [Stack Overflow]( https://stackoverflow.com/questions/4279611/how-to-embed-a-video-into-github-readme-md) post to come up with a way to upload my video on authentication testing to the README file. 
+
+### Media 
+- The **Fitness Kitchen** logo was created using [Tailor Brands]( https://stackoverflow.com/questions/4279611/how-to-embed-a-video-into-github-readme-md)
+- [Shutterstock]( https://www.shutterstock.com/search/healthy+food) was the source for the Hero image and About image. 
+- [Davey Nutrition]( https://www.daveynutrition.com/) was the source for the recipe images. 
+- [Font Awesome]( https://fontawesome.com/start) was the source of all the icons. 
+
+### Content
+- All of the recipe content was taken from [Davey Nutrition's]( https://www.daveynutrition.com/) online reicpes. 
+- The rest of the content was written by myself. 
+
+## ACKNOWLEDGEMENTS
+- My mentor, [Precious Ijege]( https://github.com/precious-ijege) was a great help. The three mentor sessions were invaluable. He explained every suggestion in a clear concise manner, and pointed out bugs i would never have seen.
+
+-  My tutor, [Cormac Lawlor]( https://github.com/armedcor) was very supportive during the project. Being a past student himself, he was aware of certain issues i was facing and was always at hand to offer support. 
+
+- [Brian O' Grady]( https://www.linkedin.com/in/brian-o-grady-18a2153/?originalSubdomain=ie) and [Matt Rudge's]( https://www.linkedin.com/in/mattrudge73/) teaching of the course content, in particular the 'Task Manager' mini project was a great help in growing my Flask and python skils prior to commencing this project.
+
+- [slack]( https://slack.com/signin) channels were a great help in particular the dara-centric-dev channel. Although i didn't ask a question directly in the channel, seeing issues that were similar to mine being resolved was a great help in this project. 
