@@ -297,8 +297,13 @@ def access_denied():
     if 'username' in session:
         flash('You are logged in as ' + session['username'])
         return redirect(url_for('my_recipes'))
-    return render_template("access_denied.html")
+    return render_template('access_denied.html')
 
+
+# About Page 
+@app.route('/about')
+def about():
+    return render_template('about.html')
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
