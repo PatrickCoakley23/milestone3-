@@ -1,23 +1,23 @@
 # **The Fitness Kitchen** 
 
-As part of my Milestone 3 project with [Code Institute]( https://codeinstitute.net/) i was challenged with designing, developing and implementing a back-end for a web application using Python and the
-[flask micro-framework]( https://flask.palletsprojects.com/en/1.1.x/), allowing users to create, read, update and delete(CRUD) data entries on a fully responsive full stack web application. 
+As part of my Milestone 3 project with [Code Institute]( https://codeinstitute.net/) i was challenged with designing, developing and implementing a back-end web application using [Python]( https://www.python.org/) and the
+[flask micro-framework]( https://flask.palletsprojects.com/en/1.1.x/). Users are required to have the ability to create, read, update and delete(CRUD) data entries on a fully responsive full stack web application. 
 
-I have decided to create an online healthy cooking recipe website which promotes healthy meals. All the recipes are healthy nutritious meals, which are also tasty and eye catching proving to the user that eating healthy doesn’t have to be mundane. 
-Each recipe includes everyday ingredients you can find in your local supermarket, and have easy to follow preparation and cooking methods that accommodates people of all cooking skill levels. 
-Users are able to add, delete and update their own recipes so the website can be a one stop shop for all their healthy recipes. 
+I decided to create an online healthy cooking recipe website which promotes healthy meals. All the recipes are tasty and eye catching and healthy nutritious meals, proving to the user that eating healthy doesn’t have to be mundane. 
+Each recipe includes everyday ingredients that you can find in your local supermarket, and have easy to follow preparation and cooking methods that accommodates people of all cooking skill levels. 
+Logged in users are able to add, edit, delete and update their own recipes so the website can be a one stop shop for all their healthy recipes. 
 
 [view the live project here.](https://milestone-3-pcn.herokuapp.com/)
 
 <h2 align="center"><img src="README/images/milestone3-responsive.png" max-width="50%"></h2>
 
 ## **USER EXPERIENCE (UX)**
-The idea of a recipe website isn't something new, but this website is moving the goal post's by making <strong>'The Healthy Kitchen'</strong> a one stop shop for all your healthy recipes. Everyone has endless access to different recipe's, from influencers to tv chefs, and  from websites or social media pages to the old fashioned recipe book. One problem users face, is they have to trawl through all these mediums to find their recipe. The <strong>'The Healthy Kitchen'</strong> is the solution. Registered Users can add, edit and delete their own recipes and have access to all the other recipes uploaded to the website. Un-registered users also have access to the recipes on the website the main difference being they don't have access to the CRUD functionality.
+The idea of a recipe website isn't something new, but this website is moving the goal post's by making **The Fitness Kitchen** is a one stop shop for all your healthy recipes. Everyone has endless access to different recipe's, from Influencers to tv chefs, and  from websites or social media pages to the old fashioned recipe book. One problem user's face, is they have to trawl through all these mediums to find the recipe they are looking for. The **The Fitness Kitchen** is the solution. Registered Users can add, edit and delete their own recipes and have access to all the other recipes uploaded to the website. Un-registered users also have access to the recipes on the website the main difference being they don't have access to the CRUD functionality.
 
-Users can filter the recipes to select meals from the following categories: /breakfast meals/lunch/dinner/vegetarian category/Gluten Free. 
+Users can filter the recipes to select meals from the following categories: breakfast/lunch/dinner/vegetarian category/gluten free. 
 
 
--   ### **USER STORIES** 
+-   ### **User Stories** 
   
  1. As a user I want to see healthy nutritious meals that encourage me to cook and eat healthy.
      - When the user comes to the main page of the site they are greeted with all the various recipes and a brief supporting summary of each meal.
@@ -89,13 +89,13 @@ I used [Bootstrap 4]( https://getbootstrap.com/) to build the framework of the w
 
 ### Colour Scheme
 
-- **Black** - Black is the dominant colour throughout this website. Black is elegant, sophisticated and it implies a premium brand. The black background gives prominence the content on the site.
+- **Black** - Black is the dominant colour throughout this website. Black is elegant, sophisticated and it implies a premium brand. The black background gives prominence to the content on the site.
 
-- **Burnt Orange** - (#BF5D1D) This Burnt Orange colour is consistently used throughout the website call to action buttons, flash messages and other subtle styling. This shade of orange is juxtaposed well with the elegant black to offer a modern feel which fits well within the health industry.
+- **Burnt Orange** - (#BF5D1D) This Burnt Orange colour is consistently used throughout the website's call to action buttons, flash messages and other subtle styling. This shade of orange is juxtaposed well with the elegant black to offer a modern feel which fits well within the health industry.
 
 - **Silver** - (#B7B4B2) This Silver colour is the main font colour for the body of the website. It is also used in the borders of the entry forms to offer a 3d feel against the black background.
 
-- **Gold** - (#BC9982) This Light shade of gold is used predominantly for the headings of the website. The light cold contrast well with the background and with the Oswald font gives a classy feel.
+- **Gold** - (#BC9982) This Light shade of gold is used predominantly for the headings of the website. The light cold contrast well with the background and paired with the Oswald font it gives a classy feel.
 
 #### List of the other colours used throughout the website: 
  
@@ -117,14 +117,14 @@ Imagery is a reoccurring theme throughout the website. I felt images played a vi
 The Hero image especially works well in drawing the user in and given the website a very modern feel.
 
 ### Logo
-I created the logo on [Tailor Brands]( https://www.tailorbrands.com/). Although it is a paid service i feel the level of detail and quality of the template they use is worth it. I decided to go with a logo with a slogan for personal reasons as i have used mostly initial styled logos in the past. The slogan here "Eat Yourself Healthy" acts like a call to action, enticing the user to navigate the website and hopefully register an account. The Red logo color and the black font works well against the clean hero image. 
+I created the logo on [Tailor Brands]( https://www.tailorbrands.com/). Although it is a paid service i feel the level of detail and quality of the template they use is worth it. I decided to go with a logo with a slogan for personal reasons, as i have used mostly initial styled logos in the past. The slogan here "Eat Yourself Healthy" acts like a call to action, enticing the user to navigate the website and hopefully register an account. The Red logo color and the black font works well against the clean hero image. 
 <h2 align="center"><img src="README/images/logo_readme.jpg" max-width="30%"></h2>
 
 ## **LAYOUT**
 
 ### Homepage 
 
-The homepage sets up to be enticing while at the same time obvious to the user the purpose of the website. The Hero Image paired with the Logo sets the theme of the website as healthy food recipe site. 
+The homepage sets up to be enticing while at the same time obvious to the user the purpose of the website. The hero image paired with the logo, sets the theme of the website as a healthy food recipe site. 
 
 - There is two obvious call to actions:
 
@@ -142,8 +142,8 @@ The homepage sets up to be enticing while at the same time obvious to the user t
 ---
 ### Recipes Page 
 
-Although this is not the homepage of the site, it is the main page of the website. Each website is presented in the form of a [Bootstrap card]( https://getbootstrap.com/docs/4.0/components/card/#card-groups). Users get a snippet of the recipe, and can get more details of each recipe if they click the button on the button of each recipe card deck. 
-Users can also use the filtered dropdown to select different recipe categories(breakfast/lunch/dinner/vegetarian/Gluten Free). 
+Although this is not the homepage of the site, it is the main page of the website. Each recipe is presented in the form of a [Bootstrap card]( https://getbootstrap.com/docs/4.0/components/card/#card-groups). Users get a snippet of the recipe, and can get more details of each recipe if they click the button on the bottom of each recipe card deck. 
+Users can also use the filtered dropdown to select different recipe categories(breakfast/lunch/dinner/vegetarian/gluten free). 
 I included a pagination feature on this page, to safeguard against the future growth of this website where users would potentially have to scroll endlessly whilst browsing the website. 
 With the pagination function, the recipe's page is capped at 9 recipes per page.
 
@@ -172,7 +172,7 @@ Users do not need to be logged in to access this page.
 ### About Page 
 The About page is to reaffirm to the user the purpose of the website. The user will be able to gain trust that **'The Fitness Kitchen'** is a genuine brand and set up for genuine reasons. 
 
-Login is not required for this page as this may be the final affirmation the user needs before register an account with **'The Fitness Kitchen'**
+Login is not required for this page, as this may be the final affirmation the user needs before registering an account with **'The Fitness Kitchen'**
 
 <details>
 <summary>About Page <strong>(Click dropdown for images)</strong></summary>
@@ -215,7 +215,7 @@ Login is required for these pages.
 <details>
 <summary>Edit Recipe <strong>(Click dropdown for images)</strong></summary>
 <p align="center">
-  <img height="350" src="README/images/.png" style="max-width:100%;"></a>
+  <img height="350" src="README/images/edit_recipe.png" style="max-width:100%;"></a>
 </p>
 </details>  
 
@@ -234,8 +234,8 @@ Users must be logged in, and they must be the creator of that specific recipe in
 
 ---
 ### My Recipes
-If Users are logged in , they can click the 'My Recipe' tab on the nav bar and it will showcase only the recipes the user has added. 
-Pagination is also included on this page for the very reasons outline in the Recipes Page. 
+If users are logged in , they can click the 'My Recipe' tab on the nav bar and it will showcase only the recipes the user has added. 
+Pagination is also included on this page for the very same reasons outlined above in the Recipes Page. 
 
 <details>
 <summary> My recipes <strong>(Click dropdown for images)</strong></summary>
@@ -249,6 +249,8 @@ Pagination is also included on this page for the very reasons outline in the Rec
 Authentication wasn't required for this Milestone Project, but after I implemented the CRUD functionality and I had a minimum viable product, i decided to implement a login and registration. Having authentication allows for a more secure website. Users can't delete other user's recipes. Authentication also allows the website to be more personal. Users have their own 'My Recipes section' and are also greeted with their session username in the flash messages. 
 
 If users are already logged in and unintentionally get redirected to the 'Login' page by the browser, they will be redirected to their own recipes page and a flash message will greet them "You are already logged in". I decided against redirecting logged in users away from the 'Register' page as it's not a distinct possibility that a user may want to register another account. 
+
+[Bcrypt]( https://flask-bcrypt.readthedocs.io/en/latest/) was used to hash the passwords in the database. Otherwise, I as the site owner, would be able to see everyones password in the database. 
 
 <details>
 <summary>Login Page <strong>(Click dropdown for images)</strong></summary>
@@ -265,7 +267,7 @@ If users are already logged in and unintentionally get redirected to the 'Login'
 </details>
 
 <details>
-<summary>Enter (/login) in the browser and Already Logged, redirected with message <strong>(Click dropdown for images)</strong></summary>
+<summary>Enter ( /login ) in the browser and Already Logged, redirected with message <strong>(Click dropdown for images)</strong></summary>
 <p align="center">
   <img height="350" src="README/images/user_already_logged_in.jpg" style="max-width:100%;"></a>
 </p>
@@ -293,7 +295,7 @@ Users have the option to log in, register or else navigate back by clicking the 
 ---
 ### Base Template 
 The base.html contains the basic layout which is common to all the other templates, and it is from this base template that we extend the layout for other pages.
-We modify the parent template(base.html) using the child templates (e.g the pages listed above). The {% extend %} must be the first tag in the child templates. This tag tells the template engine that this template extends from the parent template or ( base.html ).
+We modify the parent template(base.html) using the child templates (e.g the pages listed above). The {% extend base.html %} must be the first tag in the child templates. This tag tells the template engine that this template extends from the parent template or ( base.html ).
 
 We then use Template inheritance eg. 
 
@@ -399,9 +401,9 @@ Users who are not logged in see "Recipes/ Add Recipes / My Recipes / Logout".
 
 ## TESTING 
 Manual testing was the only requirement to access the functionality, usability and responsiveness and data management of my full stack web application.
-Debugging was carried out on an ongoing basis throughout of the project. Whilst coding i would preview run my code in the browser and check for any bug issues and make changes and fixes on an ad hoc basis.
+Debugging was carried out on an ongoing basis throughout the development of the project. Whilst coding i would run my code in the browser and check for any bug issues and make changes and fixes on an ad hoc basis.
 
-I carried out manual testing and documented any errors/random side-effects captured in the DevTools. I loaded the website several times, and forced browser refresh to try and catch any errors but thankfully there was none.
+I carried out manual testing and documented any errors/random side-effects captured in the [Chrome Developer Tools]( https://developers.google.com/web/tools/chrome-devtools). I loaded the website several times, and forced browser refresh to try and catch any errors but thankfully there was none.
 
 <details>
     <summary>Dev Tool Testing <strong>(Click dropdown for images)</strong></summary>
@@ -411,13 +413,13 @@ I carried out manual testing and documented any errors/random side-effects captu
     </details> 
 
 ### Responsiveness
-I carried out extensive testing of the responsiveness of my website by checking how the website rendered on different devices and on lower screen widths.
+I carried out extensive testing of the responsiveness of my website, by checking how the website rendered on different devices and on lower screen widths.
 I have showcased screngrabs of how the website pages rendered on desktop/laptop view, tablet and mobile view. 
 
-Testing in [Chrome Developer Tools]( https://developers.google.com/web/tools/chrome-devtools) was carried out on an ongoing basis to check the repsonsiveness and carried out debugging of issues.
+Testing in [Chrome Developer Tools]( https://developers.google.com/web/tools/chrome-devtools) was carried out on an ongoing basis to check the responsiveness and carried out debugging of issues.
 
 #### HomePage (Hero Image)
-Whilst working on the project i didn't like how the fruit and vegetables on the Hero Image went out of view on smaller screen widths below 992px so i implimented a media query to solve this issue.
+Whilst working on the project i didn't like how the fruit and vegetables on the Hero Image went out of view on smaller screen widths below 992px. I implemented a media query to solve this issue.
 
 <details>
     <summary>Home Page Responsiveness <strong>(Click dropdown for images)</strong></summary>
@@ -433,7 +435,7 @@ Whilst working on the project i didn't like how the fruit and vegetables on the 
 </details> 
 
 #### Recipes Page
-During debugging i didn't like the look of how the recipes page rendered on Ipad only (not Ipad Pro) so i made a media query for tabelt screen widths with changed the image size and font size. I didn't provide screengrabs for the filtered recipes pages or the 'My Recipe's Page as they follow the same template.
+During debugging, i didn't like the look of how the recipes page rendered on iPad only (not iPad Pro) so i made a media query for tablet screen widths, which changed the image size and font size. I didn't provide screen grab's for the filtered recipes pages or the 'My Recipe's Page, as they follow the same template.
 
 <details>
     <summary>Recipe Page Responsiveness <strong>(Click dropdown for images)</strong></summary>
@@ -508,13 +510,13 @@ Nothing was changed for these pages as they rendered fine on all devices
 I created a Testing Matrix in Excel to record my findings. 
 
 <details>
-    <summary>Testing Matrix<strong>(Click dropdown for images)</strong></summary>
+    <summary>Testing Matrix <strong>(Click dropdown for images)</strong></summary>
     <p align="center">
     <img height="350" src="README/testing_matrix/testing_matrix.png" style="max-width:100%;"></a>
     </p>
 </details> 
 
-* **the main points from this type of testing**
+* **The main points from this type of testing**
     
   - The Website was tested on Google Chrome,Internet Explorer, Microsoft Edge, Mozilla Firefox and Safari browsers.
 
@@ -522,28 +524,33 @@ I created a Testing Matrix in Excel to record my findings.
 
   - A large amount of testing was done to ensure that all pages were linking correctly.
 
-  - Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
+  - Friends and family members were asked to review the site and point out any bugs and/or user experience issues.
 
-  - Internt Explorer performed poorly yet again. Buttons are either positioned incorrectly or don’t appear at all. Horizontal rules are also out of position on Internet Explorer.         
+  - Yet again, Internet Explorer performed poorly. Buttons are either positioned incorrectly or don’t appear at all. Horizontal rules are also out of position on Internet Explorer.         
+
 
 ## Testing of User Stories 
 
 1. As a user I want to see healthy nutritious meals that encourage me to cook and eat healthy.
     * On the Recipes page the user is greeted with a page full of eye catching reicpe images encouraging the user to browse through the diffrent options. Upon clicking the recipe button under the recipe card they are interested in, they are brought to the recipe_selected page, which shows more information on that specific recipe. 
+    
     * Each recipe contains their macronutrients so they can identify if they specific meal can fit their daily needs and be healthy. 
 
-<details>
-    <summary>User wanting healthy nutritious meals<strong>(Click dropdown for images)</strong></summary>
-    <p align="center">
-    <img height="350" src="README/testing/user_story_1.png" style="max-width:100%;"></a>
-    </p>
-    <p align="center">
-    <img height="350" src="README/testing/macros.jpg" style="max-width:100%;"></a>
-    </p>
+    <details>
+        <summary>User wanting healthy nutritious meals<strong>(Click dropdown for images)</strong></summary>
+        <p align="center">
+     <img height="350" src="README/testing/user_story_1.png" style="max-width:100%;"></a>
+        </p>
+        <p align="center">
+        <img height="350" src="README/testing/macros.jpg" style="max-width:100%;"></a>
+     </p>
 
 </details> 
 
+---
+
 2. As a user I want the recipes to be broken into categories so I can filter the recipes shown to me.
+    
     * On the recipes page users can click the dropdown and they can select between the different meal categories. 
     
 <details>
@@ -553,8 +560,11 @@ I created a Testing Matrix in Excel to record my findings.
     </p>
 </details>
 
+---
 3. As a user I want to get more detailed look once I click on the recipe. 
     * Users get more specific details on the relevant recipe when they click the recipe button on the bottom of the card deck. 
+
+---
 
 4. As a user I want to be able to add my own recipes so I can use this website as a one stop shop for all my recipes.
     * Users who are logged in can add their own recipes. When they click the My Recipes tab, they are presented with a page full of their own recipes only. 
@@ -568,6 +578,8 @@ I created a Testing Matrix in Excel to record my findings.
     <img height="350" src="README/images/my_recipes.png" style="max-width:100%;"></a>
     </p>
 </details>
+
+---
 
 5. As a user I want to be able to delete or update/edit the recipes I added to the website.
     * Users who are logged in can edit and delete their own recipes only.
@@ -584,11 +596,18 @@ I created a Testing Matrix in Excel to record my findings.
     </p>
 </details>
 
+---
+
 6. As a user I want to easily understand the purpose of the site and learn what the owner’s beliefs are.
     * Reason for the About page so the user can get a better understanding of the app and the brand.
 
+---
+
 7. As a site owner, I want to ensure my website is secure, and I want to keep a dataset of my users.
     * Reason For Login/Registration. 
+
+
+---
 
 8. As a site owner i want to be able to control who can delete content as part of the crud functionality requirements. 
     
@@ -601,8 +620,10 @@ I created a Testing Matrix in Excel to record my findings.
     </p>
 </details>
 
+---
+
 ## Defensive Design with Authentication
-I tested the defensive design of the website in the video i have uploaded below. 
+In the video i have uploaded below, you can get a brief snippet of how i tested my defensive design around authentication for this project.
 
 Pages like 'My Recipes', 'Add Recipes', 'Edit Recipes' required session login. I tested the website by typing the url of those pages into the address bar and as planned i was greeted with the access denied page. 
 I also tested if i could access the 'Login' page whilst logged, and as planned i was redirected away from the 'Login' page. 
@@ -611,27 +632,28 @@ I also tested imputting incorrect data into the login and registration pages and
 
 <a href="https://www.youtube.com/watch?v=rG6XinYr78A&feature=youtu.be"><img src="README/images/youtube_video.png" max-width="50%"></a>
 
+**Click the image or the link here [Youtube Video]( https://www.youtube.com/watch?v=rG6XinYr78A&feature=youtu.be)**
 ## DEPLOYMENT 
-I first set up my repository on Github. Github is a hosting platform which stores and presents my code. 
-When logged into i click the green button on the right handside under repositories to create a new repository.
+I first set up my repository on [Github](https://github.com/). Github is a hosting platform which stores and presents my code. 
+When logged into GitHub i click the green button on the right handside under repositories to create a new repository.
 After creating a repository on github i click the green 'Gitpod' button which opens my repository in Gitpod. 
 I don't ever create projects directly in Gitpod, i create them in Github, and use the green button to open my project and begin coding. 
 
-Gitpod is an IDE (integrated development environment) that allows for software development. It's important when i create a new html file in Gitpod that i name my default file index.html as the server looks for this and loads this page automatically. 
-Once i have inserted some code i can run my page in the browser and within seconds, i can view the web version of my page. 
+Gitpod is an IDE (integrated development environment) that allows for software development.  
+Once i have inserted some code, i can run my page in the browser and within seconds, i can view the web version of my page. 
 Gitpod is where i develop my project, write code and complete debugging issues. 
 
-An important note, after i have created the repo in Github, I then open the repository each time from the Gitpod homepage, which shows me my most recent workspaces. 
+An important note, after i have created the repo in Github, I then open the repository each time from the [Gitpod]( gitpod.io/) homepage, which shows me my most recent workspaces. 
 If I were to click the green button in Github every time, this would just create a new version of my repository each time. 
 
 In Gitpod, the next step is to commit any significant work and push it to Github. 
 
-This project it is hosted on [Heroku]( https://signup.heroku.com/?c=70130000000NeLCAA0&gclid=Cj0KCQjwjer4BRCZARIsABK4QeUrUsqWM9q6V3aC9FczWoV80QkJn_rR-MNe3GDdz7XdQsVdGUbv3X8aAufJEALw_wcB).
+This project it is hosted on [Heroku]( https://signup.heroku.com/?c=70130000000NeLCAA0&gclid=Cj0KCQjwjer4BRCZARIsABK4QeUrUsqWM9q6V3aC9FczWoV80QkJn_rR-MNe3GDdz7XdQsVdGUbv3X8aAufJEALw_wcB) and i have outlined below how to deploy your project on Heroku.
 
-You Will also need a [MongoDB]( https://www.mongodb.com/atlas-signup-from-mlab) account.  
+You will also need to create an account with [MongoDB]( https://www.mongodb.com/atlas-signup-from-mlab).
 
 ### Heroku Deployment 
-To deploy Family Hub to heroku, take the following steps:
+To deploy this project to heroku, take the following steps:
 
 1. Create a `requirements.txt` file using the terminal command `pip freeze > requirements.txt`.
 
