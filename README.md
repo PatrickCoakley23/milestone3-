@@ -25,7 +25,7 @@ Users can filter the recipes to select meals from the following categories: /bre
   2. As a user I want the recipes to be broken into categories so I can filter the recipes shown to me.  
      - Reason for filtering option where user can select between breakfast, lunch or dinner food recipes and also a vegetarian filter. 
     
-3. As a user I want to get more detailed look once I click on the recipe title/image.
+3. As a user I want to get more detailed look once I click on the recipe.
     - Supporting html page for each recipe with detailed information for the meal and the method of preparation.  
 
 4. As a user I want to be able to add my own recipes so I can use this website as a one stop shop for all my recipes. 
@@ -398,7 +398,8 @@ Users who are not logged in see "Recipes/ Add Recipes / My Recipes / Logout".
     - Allow users access to delete their own account so they don't feel trapped by **The Fitness Kitchen**. 
 
 ## TESTING 
-Manual testing was the only requirment to access the functionality, usability and responsiveness and data management of my full stack web application.
+Manual testing was the only requirement to access the functionality, usability and responsiveness and data management of my full stack web application.
+Debugging was carried out on an ongoing basis throughout of the project. Whilst coding i would preview run my code in the browser and check for any bug issues and make changes and fixes on an ad hoc basis.
 
 I carried out manual testing and documented any errors/random side-effects captured in the DevTools. I loaded the website several times, and forced browser refresh to try and catch any errors but thankfully there was none.
 
@@ -511,7 +512,7 @@ I created a Testing Matrix in Excel to record my findings.
     <p align="center">
     <img height="350" src="README/testing_matrix/testing_matrix.png" style="max-width:100%;"></a>
     </p>
-    </details> 
+</details> 
 
 * **the main points from this type of testing**
     
@@ -525,3 +526,87 @@ I created a Testing Matrix in Excel to record my findings.
 
   - Internt Explorer performed poorly yet again. Buttons are either positioned incorrectly or don’t appear at all. Horizontal rules are also out of position on Internet Explorer.         
 
+## Testing of User Stories 
+
+1. As a user I want to see healthy nutritious meals that encourage me to cook and eat healthy.
+    * On the Recipes page the user is greeted with a page full of eye catching reicpe images encouraging the user to browse through the diffrent options. Upon clicking the recipe button under the recipe card they are interested in, they are brought to the recipe_selected page, which shows more information on that specific recipe. 
+    * Each recipe contains their macronutrients so they can identify if they specific meal can fit their daily needs and be healthy. 
+
+<details>
+    <summary>User wanting healthy nutritious meals<strong>(Click dropdown for images)</strong></summary>
+    <p align="center">
+    <img height="350" src="README/testing/user_story_1.png" style="max-width:100%;"></a>
+    </p>
+    <p align="center">
+    <img height="350" src="README/testing/macros.jpg" style="max-width:100%;"></a>
+    </p>
+
+</details> 
+
+2. As a user I want the recipes to be broken into categories so I can filter the recipes shown to me.
+    * On the recipes page users can click the dropdown and they can select between the different meal categories. 
+    
+<details>
+    <summary>User Story Filter Categories<strong>(Click dropdown for images)</strong></summary>
+    <p align="center">
+    <img height="350" src="README/images/dropdown.png" style="max-width:100%;"></a>
+    </p>
+</details>
+
+3. As a user I want to get more detailed look once I click on the recipe. 
+    * Users get more specific details on the relevant recipe when they click the recipe button on the bottom of the card deck. 
+
+4. As a user I want to be able to add my own recipes so I can use this website as a one stop shop for all my recipes.
+    * Users who are logged in can add their own recipes. When they click the My Recipes tab, they are presented with a page full of their own recipes only. 
+
+<details>
+    <summary>User Story Add Recipes<strong>(Click dropdown for images)</strong></summary>
+    <p align="center">
+    <img height="350" src="README/images/add_recipe.png" style="max-width:100%;"></a>
+    </p>
+    <p align="center">
+    <img height="350" src="README/images/my_recipes.png" style="max-width:100%;"></a>
+    </p>
+</details>
+
+5. As a user I want to be able to delete or update/edit the recipes I added to the website.
+    * Users who are logged in can edit and delete their own recipes only.
+<details>
+    <summary>User Story Edit/Delete<strong>(Click dropdown for images)</strong></summary>
+    <p align="center">
+    <img height="350" src="README/images/edit_delete_button.jpg" style="max-width:100%;"></a>
+    </p>
+    <p align="center">
+    <img height="350" src="README/images/delete_recipe.png" style="max-width:100%;"></a>
+    </p>
+     <p align="center">
+    <img height="350" src="README/images/edit_recipe.png" style="max-width:100%;"></a>
+    </p>
+</details>
+
+6. As a user I want to easily understand the purpose of the site and learn what the owner’s beliefs are.
+    * Reason for the About page so the user can get a better understanding of the app and the brand.
+
+7. As a site owner, I want to ensure my website is secure, and I want to keep a dataset of my users.
+    * Reason For Login/Registration. 
+
+8. As a site owner i want to be able to control who can delete content as part of the crud functionality requirements. 
+    
+    * One of the main reasons for creating the authentication was to stop someone coming onto my site and deleting all the recipes. Their is an if statement set up which protects the content being deleted unless the user is the author of that recipe. 
+
+<details>
+    <summary>User Story If Statement<strong>(Click dropdown for images)</strong></summary>
+    <p align="center">
+    <img height="350" src="README/images/if_statement.png" style="max-width:100%;"></a>
+    </p>
+</details>
+
+## Defensive Design with Authentication
+I tested the defensive design of the website in the video i have uploaded below. 
+
+Pages like 'My Recipes', 'Add Recipes', 'Edit Recipes' required session login. I tested the website by typing the url of those pages into the address bar and as planned i was greeted with the access denied page. 
+I also tested if i could access the 'Login' page whilst logged, and as planned i was redirected away from the 'Login' page. 
+I also tested imputting incorrect data into the login and registration pages and the correct reponses were rendered. 
+
+
+<a href="https://www.youtube.com/watch?v=rG6XinYr78A&feature=youtu.be"><img src="README/images/youtube_video.png" max-width="50%"></a>
