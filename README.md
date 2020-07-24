@@ -610,3 +610,91 @@ I also tested imputting incorrect data into the login and registration pages and
 
 
 <a href="https://www.youtube.com/watch?v=rG6XinYr78A&feature=youtu.be"><img src="README/images/youtube_video.png" max-width="50%"></a>
+
+## DEPLOYMENT 
+I first set up my repository on Github. Github is a hosting platform which stores and presents my code. 
+When logged into i click the green button on the right handside under repositories to create a new repository.
+After creating a repository on github i click the green 'Gitpod' button which opens my repository in Gitpod. 
+I don't ever create projects directly in Gitpod, i create them in Github, and use the green button to open my project and begin coding. 
+
+Gitpod is an IDE (integrated development environment) that allows for software development. It's important when i create a new html file in Gitpod that i name my default file index.html as the server looks for this and loads this page automatically. 
+Once i have inserted some code i can run my page in the browser and within seconds, i can view the web version of my page. 
+Gitpod is where i develop my project, write code and complete debugging issues. 
+
+An important note, after i have created the repo in Github, I then open the repository each time from the Gitpod homepage, which shows me my most recent workspaces. 
+If I were to click the green button in Github every time, this would just create a new version of my repository each time. 
+
+In Gitpod, the next step is to commit any significant work and push it to Github. 
+
+This project it is hosted on [Heroku]( https://signup.heroku.com/?c=70130000000NeLCAA0&gclid=Cj0KCQjwjer4BRCZARIsABK4QeUrUsqWM9q6V3aC9FczWoV80QkJn_rR-MNe3GDdz7XdQsVdGUbv3X8aAufJEALw_wcB).
+
+You Will also need a [MongoDB]( https://www.mongodb.com/atlas-signup-from-mlab) account.  
+
+### Heroku Deployment 
+To deploy Family Hub to heroku, take the following steps:
+
+1. Create a `requirements.txt` file using the terminal command `pip freeze > requirements.txt`.
+
+2. Create a `Procfile` with the terminal command `echo web: python app.py > Procfile`.
+
+3. `git add` and `git commit` the new requirements and Procfile and then `git push` the project to GitHub.
+
+3. Create a new app on the [Heroku website](https://dashboard.heroku.com/apps) by clicking the "New" button in your dashboard. Give it a name and set the region to Europe.
+
+4. From the heroku dashboard of your newly created application, click on "Deploy" > "Deployment method" and select GitHub.
+
+5. Confirm the linking of the heroku app to the correct GitHub repository.
+
+6. In the heroku dashboard for the application, click on "Settings" > "Reveal Config Vars".
+
+7. Set the following config vars:
+
+    * The MONGO URI: mongodb+srv://<username>:<password>@<cluster_name>.4ti1g.mongodb.net/<dbname>?retryWrites=true&w=majority
+    * SECRET_KEY: <your_secret_key>
+    * DEBUG: False
+    * PORT: 5000
+    * IP: 0.0.0.0
+
+- To get you MONGO_URI read the MongoDB Atlas documentation [here](https://docs.atlas.mongodb.com/)
+
+<h5 align="center"><img src="README/images/config_vars.png" max-width="30%"></h5>
+
+8. In the heroku dashboard, click "Deploy".
+
+9. In the "Manual Deployment" section of this page, made sure the master branch is selected and then click "Deploy Branch".
+
+10. The site is now successfully deployed.
+
+### How to run this project locally 
+To run this project on your own IDE follow the instructions below. Ensure you have an IDE such as GitPod and the following installed:
+
+1. PIP
+2. Git
+3. Python3
+4. If you are using the [Code Institute Full template]( https://github.com/Code-Institute-Org/gitpod-full-template) the above will already be installed
+5. A MongoDB account sign up [here]( https://www.mongodb.com/atlas-signup-from-mlab) 
+
+#### Instructions
+1. After installing all required modules to make your functions work you need to run the command pip3 freeze -r requirements.txt in the CLI. This will create a requirements file, which later in the project, can be updated with the same command if you were to add more modules.
+2. In your local IDE create a file called env.py
+3. Inside the env.py file, create a SECRET_KEY variable and a MONGO_URI to link to your own database.
+4. Make sure to immediately add env.py to a .gitignore file so it's not committed and pushed to the repository where anyone can then see the SECRET_KEY and MONGO_URI
+5. You can now run the application with the command python app.py
+
+## MONGO DB SCHEMA 
+
+#### Milstone3 Collections
+<h5 align="center"><img src="README/mongodb_schema/collections.png" max-width="30%"></h5>
+
+#### Milestone3 Recipes SCHEMA
+<h5 align="center"><img src="README/mongodb_schema/recipes_schema.png" max-width="30%"></h5>
+
+#### Milestone3 Categories SCHEMA
+<h5 align="center"><img src="README/mongodb_schema/categories_schema.png" max-width="30%"></h5>
+
+#### Milestone3 Users Schema 
+<h5 align="center"><img src="README/mongodb_schema/users_schema.png" max-width="30%"></h5>
+
+## CREDITS 
+
+- I followed this online tutorial on [Youtube]( https://www.youtube.com/watch?v=vVx1737auSE&t=882s) to create the authentication. I needed to change the code myself as this video was 4 years old. The (Flask-Brypt)[https://flask-bcrypt.readthedocs.io/en/latest/) documentation helped with this. 
