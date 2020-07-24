@@ -177,7 +177,13 @@ Login is not required for this page, as this may be the final affirmation the us
 <details>
 <summary>About Page <strong>(Click dropdown for images)</strong></summary>
 <p align="center">
-  <img height="350" src="" style="max-width:100%;"></a>
+  <img height="350" src="README/images/about.png" style="max-width:100%;"></a>
+</p>
+<p align="center">
+  <img height="350" src="README/images/about_ipad.png" style="max-width:100%;"></a>
+</p>
+<p align="center">
+  <img height="350" src="README/images/about_mobile.png" style="max-width:100%;"></a>
 </p>
 </details>  
 
@@ -409,6 +415,38 @@ I carried out manual testing and documented any errors/random side-effects captu
     <summary>Dev Tool Testing <strong>(Click dropdown for images)</strong></summary>
     <p align="center">
     <img height="350" src="README/testing/dev_tool.jpg" style="max-width:100%;"></a>
+    </p>
+    </details> 
+
+### Validators
+
+I carried out [PEP8 testing]( http://pep8online.com/) to improve the readability and consistency of my Python code. Below is my pass result. 
+
+<details>
+    <summary>PEP8 <strong>(Click dropdown for images)</strong></summary>
+    <p align="center">
+    <img height="350" src="README/testing/css_validator.png" style="max-width:100%;"></a>
+    </p>
+    </details> 
+
+I also passed the [W3C CSS Validator]( https://jigsaw.w3.org/css-validator/).
+<details>
+    <summary>CSS Validator <strong>(Click dropdown for images)</strong></summary>
+    <p align="center">
+    <img height="350" src="README/testing/pep8.png" style="max-width:100%;"></a>
+    </p>
+    </details> 
+
+
+I tested the code on [W3C HTML VALIDATOR]( https://validator.w3.org/)
+I got some errors in the code but this was down to the [Jinga templating]( https://jinja.palletsprojects.com/en/2.11.x/)  
+<details>
+    <summary>HTML Validator <strong>(Click dropdown for images)</strong></summary>
+    <p align="center">
+    <img height="350" src="README/testing/html_validator.png" style="max-width:100%;"></a>
+    </p>
+     <p align="center">
+    <img height="350" src="README/testing/html_validator(1).png" style="max-width:100%;"></a>
     </p>
     </details> 
 
