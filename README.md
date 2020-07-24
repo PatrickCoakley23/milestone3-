@@ -274,7 +274,7 @@ If users are already logged in and unintentionally get redirected to the 'Login'
 </details>  
 
 <details>
-<summary>Personal greeting upon Logging in<strong>(Click dropdown for images)</strong></summary>
+<summary>Personal greeting upon Logging in <strong>(Click dropdown for images)</strong></summary>
 <p align="center">
   <img height="350" src="README/images/log_in_message.jpg" style="max-width:100%;"></a>
 </p>
@@ -286,7 +286,7 @@ if a user is not logged in and tries intentionally or unintentionally to reach a
 Users have the option to log in, register or else navigate back by clicking the previous button on the browser tab. 
 
 <details>
-<summary>Access Denied<strong>(Click dropdown for images)</strong></summary>
+<summary>Access Denied <strong>(Click dropdown for images)</strong></summary>
 <p align="center">
   <img height="350" src="README/images/access_denied.png" style="max-width:100%;"></a>
 </p>

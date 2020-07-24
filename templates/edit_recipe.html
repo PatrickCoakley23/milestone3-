@@ -1,132 +1,136 @@
 {% extends 'base.html' %} {% block edit_recipes %}
+
+<!-- EDIT RECIPE -->
 <div class="container">
-<h2>Edit Recipe</h2>
-   <form action="{{ url_for('update_recipe', recipe_id=recipe._id) }}" method="POST">
-      <div class="form-row">
-         <div class="form-group col-lg-2">
-            <label for="prep_time"><i class="far fa-clock"></i> Prep Time</label>
-            <input type="number" min="1" class="form-control" id="prep_time" name="prep_time" value="{{recipe.prep_time}}" placeholder="mins" required/>
-         </div>
-         <div class="form-group col-lg-2">
-            <label for="cook_time"><i class="far fa-clock"></i> Cooking Time</label>
-            <input type="number" min="1" class="form-control" id="cook_time" name="cook_time" value="{{recipe.cook_time}}" placeholder="mins" required/>
-         </div>
-         <div class="form-group col-lg-6 offset-lg-2">
-            <label for="recipe_name">Recipe Title</label>
-            <input type="text" class="form-control" id="recipe_name" name="recipe_name" value="{{recipe.recipe_name}}" required/>
-         </div>
-      </div>
-      <div class="form-row">
-         <div class="form-group col-lg-1">
-            <label for="calories">Calories</label>
-            <input type="number" min="1" class="form-control" id="calories" name="calories" placeholder="eg. 10 kcals" value="{{recipe.calories}}" required/>
-         </div>
-         <div class="form-group col-lg-1">
-            <label for="protein">Protein</label>
-            <input type="number" min="1"
-               class="form-control"
-               id="protein"
-               name="protein"
-               placeholder="g"
-               value="{{recipe.protein}}"
-               required
-               />
-         </div>
-         <div class="form-group col-lg-1">
-            <label for="carbs">Carbs</label>
-            <input type="number" min="1"
-               class="form-control"
-               id="carbs"
-               name="carbs"
-               placeholder="g"
-               value="{{recipe.carbs}}"
-               required
-               />
-         </div>
-         <div class="form-group col-lg-1">
-            <label for="fat">Fat</label>
-            <input type="number" min="1"
-               class="form-control"
-               id="fat"
-               name="fat"
-               placeholder="g"
-               value="{{recipe.fat}}"
-               required
-               />
-         </div>
-     <div class="form-group col-lg-6 offset-lg-2">
-            <label for="recipe_category">Meal Type</label>
-            <select id="recipe_category" class="form-control" name="recipe_category">
-                {% for type in categories %}
-                    {% if type.recipe_category == recipe.recipe_category %}
-               <option value="{{type.recipe_category}}" selected>{{type.recipe_category}}</option>
-                    {% else %}
-                <option value="{{type.recipe_category}}">{{type.recipe_category}}</option>  
-                    {% endif %}
-               {% endfor%}
-            </select>
-         </div>
-      </div>
-      <div class="form-row">
-         <div class="form-group col-lg-2">
-            <label for="servings"><i class="fas fa-utensils"></i> Number of Servings</label>
-            <input type="text" class="form-control" id="servings" name="servings" value="{{recipe.servings}}" required/>
-         </div>
-         <div class="form-group col-lg-6 offset-lg-4">
-            <label for="description">Description</label>
-            <textarea
-               class="form-control"
-               id="description"
-               name="description"
-               rows="5"
-               required
-               >{{recipe.description}}</textarea>
-         </div>
-      </div>
-      <div class="form-row">
-         <div class="form-group col-lg-6 offset-lg-6">
-            <label for="ingredients">Ingredients</label>
-            <textarea
-               class="form-control"
-               id="ingredients"
-               name="ingredients"
-               rows="7"
-               placeholder="put each ingredient on its own line"
-               required
-               >{{recipe.ingredients}} </textarea>
-         </div>
-      </div>
-      <div class="form-row">
-         <div class="form-group col-lg-6 offset-lg-6">
-            <label for="method">Method</label>
-            <textarea
-               class="form-control"
-               id="method"
-               name="method"
-               rows="7"
-               placeholder="put each step on its own line"
-               required
-               >{{recipe.method}}</textarea>
-         </div>
-      </div>
-      <div class="form-row">
-         <div class="form-group col-lg-6 offset-lg-6">
-            <label for="image_link">Link to Image</label>
-            <input
-               type="text"
-               class="form-control"
-               id="image_link"
-               name="image_link"               
-               value="{{recipe.image_link}}"
-               required
-               />
-         </div>
-      </div>
-    <div class="form-row">
-        <div class="col-lg-6 offset-lg-6">
-            <button type="submit" class="btn btn-primary btn-bottom">Edit Recipe</button>
+    <h2>Edit Recipe</h2>
+    <!--SENDS FORM FIELDS TO UPDATE RECIPE FUNCTION TO UPDATE THE FILEDS IN THE MONGODB DATABASE-->
+    <form action="{{ url_for('update_recipe', recipe_id=recipe._id) }}" method="POST">
+        <div class="form-row">
+            <div class="form-group col-lg-2">
+                <label for="prep_time"><i class="far fa-clock"></i> Prep Time</label>
+                <input type="number" min="1" class="form-control" id="prep_time" name="prep_time" value="{{recipe.prep_time}}" placeholder="mins" required/>
+            </div>
+            <div class="form-group col-lg-2">
+                <label for="cook_time"><i class="far fa-clock"></i> Cooking Time</label>
+                <input type="number" min="1" class="form-control" id="cook_time" name="cook_time" value="{{recipe.cook_time}}" placeholder="mins" required/>
+            </div>
+            <div class="form-group col-lg-6 offset-lg-2">
+                <label for="recipe_name">Recipe Title</label>
+                <input type="text" class="form-control" id="recipe_name" name="recipe_name" value="{{recipe.recipe_name}}" required/>
+            </div>
         </div>
-    </div>
-   </form>
+        <div class="form-row">
+            <div class="form-group col-lg-1">
+                <label for="calories">Calories</label>
+                <input type="number" min="1" class="form-control" id="calories" name="calories" placeholder="eg. 10 kcals" value="{{recipe.calories}}" required/>
+            </div>
+            <div class="form-group col-lg-1">
+                <label for="protein">Protein</label>
+                <input type="number" min="1"
+                    class="form-control"
+                    id="protein"
+                    name="protein"
+                    placeholder="g"
+                    value="{{recipe.protein}}"
+                    required
+                    />
+            </div>
+            <div class="form-group col-lg-1">
+                <label for="carbs">Carbs</label>
+                <input type="number" min="1"
+                    class="form-control"
+                    id="carbs"
+                    name="carbs"
+                    placeholder="g"
+                    value="{{recipe.carbs}}"
+                    required
+                    />
+            </div>
+            <div class="form-group col-lg-1">
+                <label for="fat">Fat</label>
+                <input type="number" min="1"
+                    class="form-control"
+                    id="fat"
+                    name="fat"
+                    placeholder="g"
+                    value="{{recipe.fat}}"
+                    required
+                    />
+            </div>
+            <div class="form-group col-lg-6 offset-lg-2">
+                <label for="recipe_category">Meal Type</label>
+                <select id="recipe_category" class="form-control" name="recipe_category">
+                <!--FOR STATEMENT TO ITERATE THROUGH THE RECIPE CATEGORIES-->
+                    {% for type in categories %}
+                    {% if type.recipe_category == recipe.recipe_category %}
+                    <option value="{{type.recipe_category}}" selected>{{type.recipe_category}}</option>
+                    {% else %}
+                    <option value="{{type.recipe_category}}">{{type.recipe_category}}</option>
+                    {% endif %}
+                    {% endfor%}
+                </select>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-lg-2">
+                <label for="servings"><i class="fas fa-utensils"></i> Number of Servings</label>
+                <input type="text" class="form-control" id="servings" name="servings" value="{{recipe.servings}}" required/>
+            </div>
+            <div class="form-group col-lg-6 offset-lg-4">
+                <label for="description">Description</label>
+                <textarea
+                    class="form-control"
+                    id="description"
+                    name="description"
+                    rows="5"
+                    required
+                    >{{recipe.description}}</textarea>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-lg-6 offset-lg-6">
+                <label for="ingredients">Ingredients</label>
+                <textarea
+                    class="form-control"
+                    id="ingredients"
+                    name="ingredients"
+                    rows="7"
+                    placeholder="put each ingredient on its own line"
+                    required
+                    >{{recipe.ingredients}} </textarea>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-lg-6 offset-lg-6">
+                <label for="method">Method</label>
+                <textarea
+                    class="form-control"
+                    id="method"
+                    name="method"
+                    rows="7"
+                    placeholder="put each step on its own line"
+                    required
+                    >{{recipe.method}}</textarea>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-lg-6 offset-lg-6">
+                <label for="image_link">Link to Image</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="image_link"
+                    name="image_link"               
+                    value="{{recipe.image_link}}"
+                    required
+                    />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-lg-6 offset-lg-6">
+                <button type="submit" class="btn btn-primary btn-bottom">Edit Recipe</button>
+            </div>
+        </div>
+    </form>
 </div>
 {% endblock %}

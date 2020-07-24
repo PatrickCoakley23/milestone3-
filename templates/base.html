@@ -1,104 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css">
-    <script src="https://kit.fontawesome.com/449fb42052.js" crossorigin="anonymous"></script>
-    <title>Document</title>
-</head>
-<body>
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-dark">
-                    <!-- BRAND AND LOGO-->
-                    <a class="navbar-brand uppercase" href="{{url_for('homepage')}}"><img src="static/images/white_logo_transparent_background.png" alt="Logo for PCN" class="navbar-brand-img" /></a>
-
-                    <!-- HAMBURGER MENU FOR SMALLER SCREEN WIDTHS-->
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler1" aria-controls="navbarToggler1" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-
-                    <!-- NAVBAR -->
-                    <div class="collapse navbar-collapse" id="navbarToggler1">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--LINK TO BOOTSTRAP, STATIC FOLDER AND FONTAWESOME-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css">
+        <script src="https://kit.fontawesome.com/449fb42052.js" crossorigin="anonymous"></script>
+        <title>Document</title>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <!-- BRAND AND LOGO-->
+                <a class="navbar-brand uppercase" href="{{url_for('homepage')}}"><img src="static/images/white_logo_transparent_background.png" alt="Logo for PCN" class="navbar-brand-img" /></a>
+                <!-- HAMBURGER MENU FOR SMALLER SCREEN WIDTHS-->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler1" aria-controls="navbarToggler1" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- NAVBAR -->
+                <div class="collapse navbar-collapse" id="navbarToggler1">
+                <!--IF STATMENT, DIFFERENT NAVBAR TABS IF LOGGED IN OR NOT-->
                     {% if 'username' not in session %}
-                        <ul class="nav navbar-nav ml-auto">
-                            <li class="nav-right mr-2">
-                                <a class="nav-link" href="{{url_for('get_recipes')}}">Recipes</a>
-                            </li>
-                            <li class="nav-right mr-2">
-                                <a class="nav-link" href="">About</a>
-                            </li>
-                            <li class="nav-right mr-2">
-                                <a class="nav-link" href="{{url_for('login')}}">Login</a>
-                            </li>
-                             <li class="nav-right mr-2">
-                                <a class="nav-link" href="{{url_for('register')}}">Register</a>
-                            </li>
-                        
-                        </ul>
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-right mr-2">
+                            <a class="nav-link" href="{{url_for('get_recipes')}}">Recipes</a>
+                        </li>
+                        <li class="nav-right mr-2">
+                            <a class="nav-link" href="">About</a>
+                        </li>
+                        <li class="nav-right mr-2">
+                            <a class="nav-link" href="{{url_for('login')}}">Login</a>
+                        </li>
+                        <li class="nav-right mr-2">
+                            <a class="nav-link" href="{{url_for('register')}}">Register</a>
+                        </li>
+                    </ul>
                     {% else %}
-                          <ul class="nav navbar-nav ml-auto">
-                            <li class="nav-right mr-2">
-                                <a class="nav-link" href="{{url_for('get_recipes')}}">Recipes</a>
-                            </li>
-                            <li class="nav-right mr-2">
-                                <a class="nav-link" href="{{url_for('add_recipe')}}">Add Recipes</a>
-                            </li>
-                            <li class="nav-right mr-2">
-                                <a class="nav-link" href="{{url_for('my_recipes')}}">My Recipes</a>
-                            </li>
-                             <li class="nav-right mr-2">
-                                <a class="nav-link" href="">About</a>
-                            </li>
-                              <li class="nav-right mr-2">
-                                <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
-                            </li>
-                        </ul>
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-right mr-2">
+                            <a class="nav-link" href="{{url_for('get_recipes')}}">Recipes</a>
+                        </li>
+                        <li class="nav-right mr-2">
+                            <a class="nav-link" href="{{url_for('add_recipe')}}">Add Recipes</a>
+                        </li>
+                        <li class="nav-right mr-2">
+                            <a class="nav-link" href="{{url_for('my_recipes')}}">My Recipes</a>
+                        </li>
+                        <li class="nav-right mr-2">
+                            <a class="nav-link" href="">About</a>
+                        </li>
+                        <li class="nav-right mr-2">
+                            <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
+                        </li>
+                    </ul>
                     {% endif %}
-                    </div>
-                </nav>
-        <div class="container" style="min-height:100% width:80%"></div>
- 
-    			{% with messages = get_flashed_messages() %}
-						{% if messages %}
-						{% for message in messages %}
-						<div class="alert alert-warning alert-dismissible" role="alert">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="close"><span aria-hidden="true">&times;</span></button>
-                        {{ message }}
-                        </div>
-						{% endfor %}
-						{% endif %}
-						{% endwith %}
-                        
-    </header>
-           
+                </div>
+            </nav>
+            <div class="container" style="min-height:100% width:80%"></div>
+            <!--FLASH MESSAGES-->
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-warning alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="close"><span aria-hidden="true">&times;</span></button>
+                {{ message }}
+            </div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+        </header>
+        <main>
+        <!--CHILD ELEMENTS TO OVERIDE THE BASE HTML-->
+        <!--
+        COULD HAVE USED ONE {% BLOCK CONTENT%}{% ENDBLOCK%} 
+        BUT AT THE BEGINNING OF THE PROJECT I USED INDIVIDUAL ONES 
+        INCASE I HAD TO MOVE THEM OUT OF 
+        THE BODY FOR SOME REASON
+        -->
+            {% block content %}
+            {% endblock %}  
+            {% block add_recipes %}
+            {% endblock %}
+            {% block recipe_selected %}
+            {% endblock %}
+            {% block edit_recipes %}
+            {% endblock %}
+            {% block login %}
+            {% endblock %}
+            {% block register %}
+            {% endblock%}
+            {% block my_recipe %}   
+            {% endblock %}  
+            {% block access%}
+            {% endblock %}
 
-    <main>
-
-        {% block content %}
-        {% endblock %}  
-        {% block add_recipes %}
-        {% endblock %}
-        {% block recipe_selected %}
-        {% endblock %}
-        {% block edit_recipes %}
-        {% endblock %}
-        {% block login %}
-        {% endblock %}
-        {% block register %}
-        {% endblock%}
-        {% block my_recipe %}   
-        {% endblock %}  
-        {% block access%}
-        {% endblock %}
-    </main>
-
-
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-          <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
- 
-</body>
+        <!-- JQUERY LINKS-->
+        </main>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    </body>
 </html>

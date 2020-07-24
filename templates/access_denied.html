@@ -1,25 +1,23 @@
- {% extends 'base.html' %}    
-    {% block access%}
-    
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <section class="jumbotron access-jumbotron">
-                    <h2 class="heading-center">Unfortunately you don't have access to this page!</h2>
-                    <h5 class="heading-center">Either Log in or Register an account here!</h5>
-                    <div class="row"> 
-                        <div class="col-6" id="access-btn-login">
-                            <a href="{{ url_for('login') }}" class="btn btn-success">Log in</a>
-                        </div>
-                        <div class="col-6">
-                            <a href="{{ url_for('register') }}" class="btn btn-info">Register</a>
-                        </div>
-                    
-                    </div>
-            
-                </section>  
+{% extends 'base.html' %}    
+{% block access%}
+
+<!-- ACCESS DENIED JUMBOTRON-->
+<div class="container">
+   <div class="row">
+      <div class="col-12">
+         <section class="jumbotron access-jumbotron">
+            <h2 class="heading-center">Unfortunately you don't have access to this page!</h2>
+            <h5 class="heading-center">Either Log in or Register an account here!</h5>
+            <div class="row">
+               <div class="col-6" id="access-btn-login">
+                  <a href="{{ url_for('login') }}" class="btn btn-success">Log in</a>
+               </div>
+               <div class="col-6">
+                  <a href="{{ url_for('register') }}" class="btn btn-info">Register</a>
+               </div>
             </div>
-        </div>   
-    </div>
-    
-    {% endblock %}
+         </section>
+      </div>
+   </div>
+</div>
+{% endblock %}
