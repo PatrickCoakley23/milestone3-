@@ -404,10 +404,22 @@ Users who are not logged in see "Recipes/ Add Recipes / My Recipes / Logout".
     - I felt this would be more appropriate for when the website grows and their is more content for the user to search through. 
 - Delete an Account. 
     - Allow users access to delete their own account so they don't feel trapped by **The Fitness Kitchen**. 
+- Message if user has no recipes uploaded.
+    - Currently if a user is logged in and the navigate to the 'My Recipes' section they are greeted with the message below.
+    - If i had the time i would impliment an if statement which checks if the user has 0 recipes, and if so, they would be greeted with a message "you have no recipes, add recipes here".
+
+<details>
+    <summary>No Recipes Message<strong>(Click dropdown for images)</strong></summary>
+    <p align="center">
+    <img height="350" src="README/images/no_recipes.png" style="max-width:100%;"></a>
+    </p>
+    </details> 
+
 
 ## TESTING 
 Manual testing was the only requirement to access the functionality, usability and responsiveness and data management of my full stack web application.
 Debugging was carried out on an ongoing basis throughout the development of the project. Whilst coding i would run my code in the browser and check for any bug issues and make changes and fixes on an ad hoc basis.
+Some of the debugging i carred out, is mentioned in the responsiveness sub section below. 
 
 I carried out manual testing and documented any errors/random side-effects captured in the [Chrome Developer Tools]( https://developers.google.com/web/tools/chrome-devtools). I loaded the website several times, and forced browser refresh to try and catch any errors but thankfully there was none.
 
@@ -710,13 +722,12 @@ To deploy this project to heroku, take the following steps:
 
 7. Set the following config vars:
 
-    * The MONGO URI: mongodb+srv://<username>:<password>@<cluster_name>.4ti1g.mongodb.net/<dbname>?retryWrites=true&w=majority
+    * The MONGO URI: - To get you MONGO_URI read the MongoDB Atlas documentation [here](https://docs.atlas.mongodb.com/)
     * SECRET_KEY: <your_secret_key>
     * DEBUG: False
     * PORT: 5000
     * IP: 0.0.0.0
 
-- To get you MONGO_URI read the MongoDB Atlas documentation [here](https://docs.atlas.mongodb.com/)
 
 <h5 align="center"><img src="README/images/config_vars.png" max-width="30%"></h5>
 

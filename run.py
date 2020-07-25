@@ -248,6 +248,7 @@ def update_recipe(recipe_id):
     return redirect(url_for('access_denied'))
 
 
+#DELETE RECIPE
 @app.route('/delete_recipe/<recipe_id>')
 def delete_recipe(recipe_id):
     if 'username' in session:
