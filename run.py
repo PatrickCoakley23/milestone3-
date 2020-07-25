@@ -98,9 +98,16 @@ def register():
 # Hero Image
 @app.route('/')
 def homepage():
+    """
+    checks if user is logged in. 
+    if not logged in displays flash 
+    message. 
+    """
+    if 'username' in session:
+        return render_template('hero_image.html')
     flash('Create An Account For Free To Add Your Own Recipes')
     return render_template('hero_image.html')
-
+ 
 
 @app.route('/recipes')
 def get_recipes():
