@@ -765,6 +765,15 @@ To run this project on your own IDE follow the instructions below. Ensure you ha
 5. You can now run the application with the command python app.py
 
 ## MONGO DB SCHEMA 
+The term "schema" refers to the organization of data as a blueprint of how the database is constructed. 
+My database collection was made up of 3 databases; Recipes, Recipe Categories and Users. 
+
+The Recipes database stored all the information that users imputted when adding and editing recipes. 
+It stored all the key information such as ingredients, methods etc.
+
+The Recipe Categories database stored all the meal types. This was used to filer the recipes on the dropdown in the recipes page. 
+
+The Users database stored the user information. This information is checked when the users inputs their login details. You can see too that bcrypt has succesfully hashed the passwords in the image below.
 
 #### Milstone3 Collections
 <h5 align="center"><img src="README/mongodb_schema/collections.png" max-width="30%"></h5>
