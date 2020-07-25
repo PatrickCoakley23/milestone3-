@@ -333,3 +333,10 @@ hr {
     color: #bf5d1d;
     border: #bf5d1d;
 }
+
+/* 404 error handler */
+
+.button-center {
+    text-align: center;
+    margin-top: 10px;
+}

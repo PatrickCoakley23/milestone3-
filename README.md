@@ -299,6 +299,17 @@ Users have the option to log in, register or else navigate back by clicking the 
 </details>  
 
 ---
+### 404 Page 
+I created a customized error page incase a user gets a 404 message
+<details>
+<summary>Access Denied <strong>(Click dropdown for images)</strong></summary>
+<p align="center">
+  <img height="350" src="README/images/404_error_screenshot.png" style="max-width:100%;"></a>
+</p>
+</details>  
+
+
+---
 ### Base Template 
 The base.html contains the basic layout which is common to all the other templates, and it is from this base template that we extend the layout for other pages.
 We modify the parent template(base.html) using the child templates (e.g the pages listed above). The {% extend base.html %} must be the first tag in the child templates. This tag tells the template engine that this template extends from the parent template or ( base.html ).

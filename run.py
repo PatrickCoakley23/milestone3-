@@ -255,7 +255,7 @@ def update_recipe(recipe_id):
     return redirect(url_for('access_denied'))
 
 
-#DELETE RECIPE
+# DELETE RECIPE
 @app.route('/delete_recipe/<recipe_id>')
 def delete_recipe(recipe_id):
     if 'username' in session:
@@ -307,6 +307,12 @@ def access_denied():
         flash('You are logged in as ' + session['username'])
         return redirect(url_for('my_recipes'))
     return render_template('access_denied.html')
+
+
+# 404 page
+@app.errorhandler(404)
+def response_404(exception):
+    return render_template('error_handler.html')
 
 
 # About Page 

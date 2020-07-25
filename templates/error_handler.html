@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block access%}
+
+<!-- 404 Error Message JUMBOTRON-->
+<div class="container">
+	<div class="row">
+		<div class="col-6 offset-3">
+			<img src="static/images/404_image.jpg" alt="image of recipe" class="recipe_selected_img">
+        </div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<h2 class="heading-center">Oops this is definetly not where you want to Be!</h2>
+				<h5 class="heading-center">Click the button below get back to the homepage!</h5>
+				<div class="row button-center">
+					<div class="col button-center">
+						<a href="{{ url_for('homepage') }}" class="btn btn-success">The Fitness Kitchen Home</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	{% endblock %}
