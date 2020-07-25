@@ -66,6 +66,7 @@ def register():
     "That username already exists!"
     Otherwise they can register an account.
     """
+    flash('Create An Account For Free To Add Your Own Recipes')
     if request.method == 'POST':
         users = mongo.db.users
         username = request.form.get('username')

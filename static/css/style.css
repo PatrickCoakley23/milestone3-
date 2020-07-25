@@ -114,7 +114,7 @@ h2 {
 .hero-text {
   text-align: center;
   position: absolute;
-  top: 40%;
+  top: 38%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
@@ -255,6 +255,11 @@ hr {
     display: flex;
 }
 
+.button_margin {
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+
 /* ADD RECIPE PAGE */
 
 .hr-header {
@@ -297,4 +302,33 @@ hr {
     border: #bc9982;
 }
 
+.btn_bottom:hover, .btn_bottom:active  {
+    background-color: #B7B4B2;
+    color: #bf5d1d;
+    border: #bf5d1d;
+}
 
+
+/* ABOUT PAGE */
+
+.about_container {
+    margin-bottom: 40px;
+}
+
+/* LOG IN / Register */
+
+.log_in_container {
+    margin-top: 100px;
+}
+
+.btn_log_register {
+    margin-top: 40px;
+    background-color: #bf5d1d;
+    border-color: #B7B4B2;
+}
+
+.btn_log_register:hover, .btn_log_register:active  {
+    background-color: #B7B4B2;
+    color: #bf5d1d;
+    border: #bf5d1d;
+}

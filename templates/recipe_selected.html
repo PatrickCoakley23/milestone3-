@@ -78,7 +78,7 @@
     </div>
     <!-- IF STATEMENT TO SEE IF USER HAS PERMISSION TO DELETE/EDIT. IF THEY ARE LOGGED IN AND THE AUTHORS-->
     {% if recipe.username == session['username'] %}
-    <div class="row">
+    <div class="row button_margin">
         <div class="col-3">
             <a class="btn btn-primary data-toggle="modal" data-target="#deleteModal" href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" role="button">Edit</a>
         </div>
