@@ -1,20 +1,20 @@
 # **The Fitness Kitchen** 
 
-As part of my Milestone 3 project with [Code Institute]( https://codeinstitute.net/) i was challenged with designing, developing and implementing a back-end web application using [Python]( https://www.python.org/) and the
+As part of my Milestone 3 project with [Code Institute]( https://codeinstitute.net/), I was challenged with designing, developing and implementing a back-end web application using [Python]( https://www.python.org/) and the
 [flask micro-framework]( https://flask.palletsprojects.com/en/1.1.x/). Users are required to have the ability to create, read, update and delete(CRUD) data entries on a fully responsive full stack web application. 
 
-I decided to create an online healthy cooking recipe website which promotes healthy meals. All the recipes are tasty and eye catching and healthy nutritious meals, proving to the user that eating healthy doesn’t have to be mundane. 
+I decided to create an online healthy cooking recipe website which promotes healthy meals. All the recipes are tasty, eye catching and healthy nutritious meals, proving to the user that eating healthy doesn’t have to be mundane. 
 Each recipe includes everyday ingredients that you can find in your local supermarket, and have easy to follow preparation and cooking methods that accommodates people of all cooking skill levels. 
-Logged in users are able to add, edit, delete and update their own recipes so the website can be a one stop shop for all their healthy recipes. 
+Logged in users are able to add, edit, delete and update their own recipes. This website is a one stop shop for all your healthy recipes. 
 
 [view the live project here.](https://milestone-3-pcn.herokuapp.com/)
 
 <h2 align="center"><img src="README/images/milestone3-responsive.png" max-width="50%"></h2>
 
 ## **USER EXPERIENCE (UX)**
-The idea of a recipe website isn't something new, but this website is moving the goal post's by making **The Fitness Kitchen** is a one stop shop for all your healthy recipes. Everyone has endless access to different recipe's, from Influencers to tv chefs, and  from websites or social media pages to the old fashioned recipe book. One problem user's face, is they have to trawl through all these mediums to find the recipe they are looking for. **The Fitness Kitchen** is the solution. Registered Users can add, edit and delete their own recipes and have access to all the other recipes uploaded to the website. Un-registered users also have access to the recipes on the website the main difference being they don't have access to the CRUD functionality.
+The idea of a recipe website isn't something new, but this website is moving the goal post's by making **The Fitness Kitchen**, a one stop shop for all your healthy recipes. Everyone has endless access to different recipe's, from Influencers to tv chefs, and  from websites or social media pages to the old fashioned recipe book. One problem user's face, is they have to trawl through all these mediums to find the recipe they are looking for. **The Fitness Kitchen** is the solution. Registered Users can add, edit and delete their own recipes and have access to all the other recipes uploaded to the website. Un-registered users also have access to the recipes on the website the main difference being they don't have access to the CRUD functionality.
 
-Users can filter the recipes to select meals from the following categories: breakfast/lunch/dinner/vegetarian category/gluten free. 
+Users can filter the recipes to select meals from the following categories: breakfast/lunch/dinner/vegetarian/gluten free. 
 
 
 -   ### **User Stories** 
@@ -25,7 +25,7 @@ Users can filter the recipes to select meals from the following categories: brea
   2. As a user I want the recipes to be broken into categories so I can filter the recipes shown to me.  
      - Reason for filtering option where user can select between breakfast, lunch or dinner food recipes and also a vegetarian filter. 
     
-3. As a user I want to get more detailed look once I click on the recipe.
+3. As a user I want to get a more detailed look once I click on the recipe.
     - Supporting html page for each recipe with detailed information for the meal and the method of preparation.  
 
 4. As a user I want to be able to add my own recipes so I can use this website as a one stop shop for all my recipes. 
@@ -425,7 +425,7 @@ I carried out [PEP8 testing]( http://pep8online.com/) to improve the readability
 <details>
     <summary>PEP8 <strong>(Click dropdown for images)</strong></summary>
     <p align="center">
-    <img height="350" src="README/testing/css_validator.png" style="max-width:100%;"></a>
+       <img height="350" src="README/testing/pep8.png" style="max-width:100%;"></a>
     </p>
     </details> 
 
@@ -433,12 +433,13 @@ I also passed the [W3C CSS Validator]( https://jigsaw.w3.org/css-validator/).
 <details>
     <summary>CSS Validator <strong>(Click dropdown for images)</strong></summary>
     <p align="center">
-    <img height="350" src="README/testing/pep8.png" style="max-width:100%;"></a>
+    <img height="350" src="README/testing/css_validator.png" style="max-width:100%;"></a>
     </p>
     </details> 
 
 
-I tested the code on [W3C HTML VALIDATOR]( https://validator.w3.org/)
+I tested the code on [W3C HTML VALIDATOR]( https://validator.w3.org/).
+
 I got some errors in the code but this was down to the [Jinga templating]( https://jinja.palletsprojects.com/en/2.11.x/)  
 <details>
     <summary>HTML Validator <strong>(Click dropdown for images)</strong></summary>
